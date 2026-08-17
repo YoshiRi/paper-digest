@@ -1,18 +1,18 @@
 # 論文ダイジェスト
 
-生成日時: 2026-08-17 19:45 / 収録 191 件
+生成日時: 2026-08-17 10:51 / 収録 234 件
 
 ## トピック
 
-- [Occupancy](#occupancy) — 45 件
-- [Gaussian Splatting](#gaussian-splatting) — 32 件
-- [AD Perception](#ad-perception) — 29 件
-- [HD Map](#hd-map) — 26 件
-- [3D Detection](#3d-detection) — 20 件
+- [Occupancy](#occupancy) — 62 件
+- [Gaussian Splatting](#gaussian-splatting) — 36 件
+- [HD Map](#hd-map) — 35 件
+- [AD Perception](#ad-perception) — 32 件
+- [3D Detection](#3d-detection) — 25 件
+- [Reconstruction](#reconstruction) — 11 件
 - [Open-world](#open-world) — 10 件
-- [Reconstruction](#reconstruction) — 9 件
-- [Scene Understanding](#scene-understanding) — 8 件
-- [World Model](#world-model) — 6 件
+- [Scene Understanding](#scene-understanding) — 9 件
+- [World Model](#world-model) — 8 件
 - [Occupancy Forecasting](#occupancy-forecasting) — 3 件
 - [Topology](#topology) — 3 件
 
@@ -481,6 +481,141 @@ arXiv 2025 / Occupancy
 - Paper: https://arxiv.org/abs/2506.17004
 - Code: https://github.com/tlab-wide/Co3SOP
 
+### GraphGSOcc: Semantic-Geometric Graph Transformer with Dynamic-Static Decoupling for 3D Gaussian Splatting-based Occupancy Prediction
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.14825
+- Code: -
+
+### QuadricFormer: Scene as Superquadrics for 3D Semantic Occupancy Prediction
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.10977
+- Code: -
+
+### VoxDet: Rethinking 3D Semantic Occupancy Prediction as Dense Object Detection
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.04623
+- Code: -
+
+### DSOcc: Leveraging Depth Awareness and Semantic Aid to Boost Camera-Based 3D Semantic Occupancy Prediction
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2505.20951
+- Code: -
+
+### OccLE: Label-Efficient 3D Semantic Occupancy Prediction
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2505.20617
+- Code: https://github.com/NerdFNY/OccLE
+
+### TACOcc:Target-Adaptive Cross-Modal Fusion with Volume Rendering for 3D Semantic Occupancy
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2505.12693
+- Code: -
+
+### GaussianFormer3D: Multi-Modal Gaussian-based Semantic Occupancy Prediction with 3D Deformable Attention
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2505.10685
+- Code: -
+
+### OccCylindrical: Multi-Modal Fusion with Cylindrical Representation for 3D Semantic Occupancy Prediction
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2505.03284
+- Code: https://github.com/DanielMing123/OccCylindrical
+
+### MS-Occ: Multi-Stage LiDAR-Camera Fusion for 3D Semantic Occupancy Prediction
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2504.15888
+- Code: -
+
+### Collaborative Learning of Local 3D Occupancy Prediction and Versatile Global Occupancy Mapping
+
+ICRA 2026 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2504.13596
+- Code: -
+
+### Rethinking Temporal Fusion with a Unified Gradient Descent View for 3D Semantic Occupancy Prediction
+
+CVPR 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2504.12959
+- Code: https://github.com/cdb342/GDFusion
+
+### AGO: Adaptive Grounding for Open World 3D Occupancy Prediction
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2504.10117
+- Code: https://github.com/EdwardLeeLPZ/AGO
+
+### Inverse++: Vision-Centric 3D Semantic Occupancy Prediction Assisted with 3D Object Detection
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2504.04732
+- Code: https://github.com/DanielMing123/Inverse
+
+### MinkOcc: Towards real-time label-efficient semantic occupancy prediction
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2504.02270
+- Code: -
+
+### L2COcc: Lightweight Camera-Centric Semantic Scene Completion via Distillation of LiDAR Model
+
+arXiv 2025 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.12369
+- Code: -
+
 ### QueryOcc: Query-based Self-Supervision for 3D Semantic Occupancy
 
 CVPR 2026 / Occupancy
@@ -488,6 +623,24 @@ CVPR 2026 / Occupancy
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
 - Paper: https://arxiv.org/abs/2511.17221
+- Code: -
+
+### Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion
+
+CVPR 2026 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2604.05780
+- Code: -
+
+### An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving
+
+CVPR 2026 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2603.27238
 - Code: -
 
 ### RIOcc: Efficient Cross-Modal Fusion Transformer with Collaborative Feature Refinement for 3D Semantic Occupancy Prediction
@@ -509,14 +662,14 @@ occupancy predictionにおけるBEV表現の使い方と、LiDAR-カメラ融合
 - Paper: https://openaccess.thecvf.com/content/ICCV2025/html/Fan_RIOcc_Efficient_Cross-Modal_Fusion_Transformer_with_Collaborative_Feature_Refinement_for_ICCV_2025_paper.html
 - Code: -
 
-### Rethinking Temporal Fusion with a Unified Gradient Descent View for 3D Semantic Occupancy Prediction
+### GaussianFormer-2: Probabilistic Gaussian Superposition for Efficient 3D Occupancy Prediction
 
 CVPR 2025 / Occupancy
 
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
-- Paper: https://arxiv.org/abs/2504.12959
-- Code: https://github.com/cdb342/GDFusion
+- Paper: https://openaccess.thecvf.com/content/CVPR2025/html/Huang_GaussianFormer-2_Probabilistic_Gaussian_Superposition_for_Efficient_3D_Occupancy_Prediction_CVPR_2025_paper.html
+- Code: -
 
 ### EvOcc: Accurate Semantic Occupancy for Automated Driving Using Evidence Theory
 
@@ -718,6 +871,15 @@ CVPR 2026 / Gaussian Splatting
 - Paper: https://arxiv.org/abs/2602.24020
 - Code: -
 
+### PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting
+
+CVPR 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2605.11520
+- Code: -
+
 ### OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting
 
 CVPR 2026 / Gaussian Splatting
@@ -743,6 +905,15 @@ CVPR 2025 / Gaussian Splatting
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
 - Paper: https://arxiv.org/abs/2504.01957
+- Code: -
+
+### CoDa-4DGS: Dynamic Gaussian Splatting with Context and Deformation Awareness for Autonomous Driving
+
+ICCV 2025 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://openaccess.thecvf.com/content/ICCV2025/html/Song_CoDa-4DGS_Dynamic_Gaussian_Splatting_with_Context_and_Deformation_Awareness_for_ICCV_2025_paper.html
 - Code: -
 
 ### SplatAD: Real-Time Lidar and Camera Rendering with 3D Gaussian Splatting for Autonomous Driving
@@ -817,6 +988,15 @@ ICCV 2025 / Gaussian Splatting
 - Paper: https://arxiv.org/abs/2412.09573
 - Code: -
 
+### CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting
+
+ICCV 2025 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://openaccess.thecvf.com/content/ICCV2025/html/Jiao_CLIP-GS_Unifying_Vision-Language_Representation_with_3D_Gaussian_Splatting_ICCV_2025_paper.html
+- Code: -
+
 ### Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction
 
 ICCV 2025 / Gaussian Splatting
@@ -844,6 +1024,15 @@ ICCV 2025 / Gaussian Splatting
 - Paper: https://openaccess.thecvf.com/content/ICCV2025/html/Xu_AD-GS_Object-Aware_B-Spline_Gaussian_Splatting_for_Self-Supervised_Autonomous_Driving_ICCV_2025_paper.html
 - Code: -
 
+### NeRF Is a Valuable Assistant for 3D Gaussian Splatting
+
+ICCV 2025 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2507.23374
+- Code: -
+
 ### UniPre3D: Unified Pre-training of 3D Point Cloud Models with Cross-Modal Gaussian Splatting
 
 CVPR 2025 / Gaussian Splatting
@@ -852,6 +1041,323 @@ CVPR 2025 / Gaussian Splatting
 
 - Paper: https://arxiv.org/abs/2506.09952
 - Code: https://github.com/wangzy22/UniPre3D
+
+## HD Map
+
+### PseudoMapLabeler: Confidence-Aware Pseudo-Label Generation for Semi-Supervised Online Mapping
+
+ECCV 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2608.12600
+- Code: -
+
+### MapTCL: Temporal Consistency Learning via Bidirectional Alignment for Vectorized HD Map Construction
+
+IROS 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2608.05209
+- Code: -
+
+### TwinIR: Coordinated Invisible Dual-Point Attacks on Online HD Map Construction
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2608.04453
+- Code: -
+
+### Driver2Map: Imitating Human Driving for Online High-Definition Map Construction
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2608.01338
+- Code: -
+
+### GaussianMap: Learning Gaussian Representation for Multi-Sensor Online HD Map Construction
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2606.31177
+- Code: -
+
+### AerialFusionMapNet: Online HD Map Construction with Aerial-Onboard BEV Fusion
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2606.24784
+- Code: https://github.com/DriverlessMobility/AerialFusionMapNet
+
+### D2HDMap: Non-visible Driveline Map Prior for Online Vectorized HD Map Prediction
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2606.20725
+- Code: -
+
+### HRDX: A Large-Scale Vector HD-Map Dataset
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2606.17080
+- Code: https://github.com/honda-research-institute/HRDX
+
+### The Road Ahead in Autonomous Driving: The KITScenes Multimodal Dataset
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2606.02956
+- Code: -
+
+### Systematic Discovery of Semantic Attacks in Online Map Construction through Conditional Diffusion
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2605.14396
+- Code: -
+
+### Learning Ego-Centric BEV Representations from a Perspective-Privileged View: Cross-View Supervision for Online HD Map Construction
+
+ECCV 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2605.12218
+- Code: -
+
+### MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2603.10688
+- Code: -
+
+### Impact of Localization Errors on Label Quality for Online HD Map Construction
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2603.03452
+- Code: -
+
+### SatMap: Revisiting Satellite Maps as Prior for Online HD Map Construction
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2601.10512
+- Code: -
+
+### AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2512.19150
+- Code: -
+
+### SATMapTR: Satellite Image Enhanced Online HD Map Construction
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2512.11319
+- Code: -
+
+### NavMapFusion: Diffusion-based Fusion of Navigation Maps for Online Vectorized HD Map Construction
+
+WACV 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2512.03317
+- Code: https://github.com/tmonnin/navmapfusion
+
+### MapRF: Weakly Supervised Online HD Map Construction via NeRF-Guided Self-Training
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2511.19527
+- Code: -
+
+### Learning Global Representation from Queries for Vectorized HD Map Construction
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2510.06969
+- Code: -
+
+### Mapping like a Skeptic: Probabilistic BEV Projection for Online HD Mapping
+
+BMVC 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2508.21689
+- Code: https://github.com/Fatih-Erdogan/mapping-like-skeptic
+
+### MapKD: Unlocking Prior Knowledge with Cross-Modal Distillation for Efficient Online HD Map Construction
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2508.15653
+- Code: https://github.com/2004yan/MapKD2026
+
+### An Initial Study of Bird's-Eye View Generation for Autonomous Vehicles using Cross-View Transformers
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2508.12520
+- Code: -
+
+### RelMap: Enhancing Online Map Construction with Class-Aware Spatial Relation and Semantic Priors
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2507.21567
+- Code: -
+
+### MapDiffusion: Generative Diffusion for Vectorized Online HD Map Construction and Uncertainty Estimation in Autonomous Driving
+
+IROS 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2507.21423
+- Code: -
+
+### MambaMap: Online Vectorized HD Map Construction using State Space Model
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2507.20224
+- Code: https://github.com/ZiziAmy/MambaMap
+
+### MapFM: Foundation Model-Driven HD Mapping with Multi-Task Contextual Learning
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.15313
+- Code: https://github.com/LIvanoff/MapFM
+
+### SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction
+
+NEURIPS 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.08997
+- Code: https://github.com/immel-f/SDTagNet
+
+### SuperMapNet for Long-Range and High-Accuracy Vectorized HD Map Construction
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2505.13856
+- Code: -
+
+### SparseMeXT Unlocking the Potential of Sparse Representations for HD Map Construction
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2505.08808
+- Code: -
+
+### Uni-PrevPredMap: Extending PrevPredMap to a Unified Framework of Prior-Informed Modeling for Online Vectorized HD Map Construction
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2504.06647
+- Code: https://github.com/pnnnnnnn/Uni-PrevPredMap
+
+### AugMapNet: Improving Spatial Latent Structure via BEV Grid Augmentation for Enhanced Vectorized Online HD Map Construction
+
+WACV 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.13430
+- Code: https://github.com/tmonnin/augmapnet
+
+### FastMap: Fast Queries Initialization Based Vectorized HD Map Reconstruction Framework
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.05492
+- Code: https://github.com/hht1996ok/FastMap
+
+### RAVE: End-to-end Hierarchical Visual Localization with Rasterized and Vectorized HD map
+
+arXiv 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.00862
+- Code: -
+
+### OptiMVMap: Offline Vectorized Map Construction via Optimal Multi-vehicle Perspectives
+
+CVPR 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2604.17135
+- Code: https://github.com/DanZeDong/OptiMVMap
+
+### Driving by the Rules: A Benchmark for Integrating Traffic Sign Regulations into Vectorized HD Map
+
+CVPR 2025 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2410.23780
+- Code: -
 
 ## AD Perception
 
@@ -1108,14 +1614,14 @@ arXiv 2025 / AD Perception
 - Paper: https://arxiv.org/abs/2507.01284
 - Code: -
 
-### End-to-End Driving with Online Trajectory Evaluation via BEV World Model
+### S2R-Bench: A Sim-to-Real Evaluation Benchmark for Autonomous Driving
 
-ICCV 2025 / AD Perception
+arXiv 2025 / AD Perception
 
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
-- Paper: https://arxiv.org/abs/2504.01941
-- Code: https://github.com/liyingyanUCAS/WoTE
+- Paper: https://arxiv.org/abs/2505.18631
+- Code: https://github.com/adept-thu/S2R-Bench
 
 ### JarvisIR: Elevating Autonomous Driving Perception with Intelligent Image Restoration
 
@@ -1126,241 +1632,32 @@ CVPR 2025 / AD Perception
 - Paper: https://arxiv.org/abs/2504.04158
 - Code: -
 
-## HD Map
+### Resilient Sensor Fusion under Adverse Sensor Failures via Multi-Modal Expert Fusion
 
-### PseudoMapLabeler: Confidence-Aware Pseudo-Label Generation for Semi-Supervised Online Mapping
-
-ECCV 2026 / HD Map
+CVPR 2025 / AD Perception
 
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
-- Paper: https://arxiv.org/abs/2608.12600
+- Paper: https://arxiv.org/abs/2503.19776
 - Code: -
 
-### MapTCL: Temporal Consistency Learning via Bidirectional Alignment for Vectorized HD Map Construction
+### DynRsl-VLM: Enhancing Autonomous Driving Perception with Dynamic Resolution Vision-Language Models
 
-IROS 2026 / HD Map
+arXiv 2025 / AD Perception
 
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
-- Paper: https://arxiv.org/abs/2608.05209
+- Paper: https://arxiv.org/abs/2503.11265
 - Code: -
 
-### TwinIR: Coordinated Invisible Dual-Point Attacks on Online HD Map Construction
+### End-to-End Driving with Online Trajectory Evaluation via BEV World Model
 
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2608.04453
-- Code: -
-
-### Driver2Map: Imitating Human Driving for Online High-Definition Map Construction
-
-arXiv 2026 / HD Map
+ICCV 2025 / AD Perception
 
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
-- Paper: https://arxiv.org/abs/2608.01338
-- Code: -
-
-### GaussianMap: Learning Gaussian Representation for Multi-Sensor Online HD Map Construction
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2606.31177
-- Code: -
-
-### AerialFusionMapNet: Online HD Map Construction with Aerial-Onboard BEV Fusion
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2606.24784
-- Code: https://github.com/DriverlessMobility/AerialFusionMapNet
-
-### D2HDMap: Non-visible Driveline Map Prior for Online Vectorized HD Map Prediction
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2606.20725
-- Code: -
-
-### HRDX: A Large-Scale Vector HD-Map Dataset
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2606.17080
-- Code: https://github.com/honda-research-institute/HRDX
-
-### The Road Ahead in Autonomous Driving: The KITScenes Multimodal Dataset
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2606.02956
-- Code: -
-
-### Systematic Discovery of Semantic Attacks in Online Map Construction through Conditional Diffusion
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2605.14396
-- Code: -
-
-### Learning Ego-Centric BEV Representations from a Perspective-Privileged View: Cross-View Supervision for Online HD Map Construction
-
-ECCV 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2605.12218
-- Code: -
-
-### MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2603.10688
-- Code: -
-
-### Impact of Localization Errors on Label Quality for Online HD Map Construction
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2603.03452
-- Code: -
-
-### SatMap: Revisiting Satellite Maps as Prior for Online HD Map Construction
-
-arXiv 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2601.10512
-- Code: -
-
-### AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction
-
-arXiv 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2512.19150
-- Code: -
-
-### SATMapTR: Satellite Image Enhanced Online HD Map Construction
-
-arXiv 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2512.11319
-- Code: -
-
-### NavMapFusion: Diffusion-based Fusion of Navigation Maps for Online Vectorized HD Map Construction
-
-WACV 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2512.03317
-- Code: https://github.com/tmonnin/navmapfusion
-
-### MapRF: Weakly Supervised Online HD Map Construction via NeRF-Guided Self-Training
-
-arXiv 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2511.19527
-- Code: -
-
-### Learning Global Representation from Queries for Vectorized HD Map Construction
-
-arXiv 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2510.06969
-- Code: -
-
-### Mapping like a Skeptic: Probabilistic BEV Projection for Online HD Mapping
-
-BMVC 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2508.21689
-- Code: https://github.com/Fatih-Erdogan/mapping-like-skeptic
-
-### MapKD: Unlocking Prior Knowledge with Cross-Modal Distillation for Efficient Online HD Map Construction
-
-arXiv 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2508.15653
-- Code: https://github.com/2004yan/MapKD2026
-
-### An Initial Study of Bird's-Eye View Generation for Autonomous Vehicles using Cross-View Transformers
-
-arXiv 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2508.12520
-- Code: -
-
-### RelMap: Enhancing Online Map Construction with Class-Aware Spatial Relation and Semantic Priors
-
-arXiv 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2507.21567
-- Code: -
-
-### MapDiffusion: Generative Diffusion for Vectorized Online HD Map Construction and Uncertainty Estimation in Autonomous Driving
-
-IROS 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2507.21423
-- Code: -
-
-### MambaMap: Online Vectorized HD Map Construction using State Space Model
-
-arXiv 2025 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2507.20224
-- Code: https://github.com/ZiziAmy/MambaMap
-
-### OptiMVMap: Offline Vectorized Map Construction via Optimal Multi-vehicle Perspectives
-
-CVPR 2026 / HD Map
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2604.17135
-- Code: https://github.com/DanZeDong/OptiMVMap
+- Paper: https://arxiv.org/abs/2504.01941
+- Code: https://github.com/liyingyanUCAS/WoTE
 
 ## 3D Detection
 
@@ -1445,6 +1742,33 @@ arXiv 2025 / 3D Detection
 - Paper: https://arxiv.org/abs/2507.21358
 - Code: https://github.com/jichengyuan/Collaborative-Perceiver
 
+### Revisiting Radar Camera Alignment by Contrastive Learning for 3D Object Detection
+
+arXiv 2025 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2504.16368
+- Code: -
+
+### Manboformer: Learning Gaussian Representations via Spatial-temporal Attention Mechanism
+
+arXiv 2025 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.04863
+- Code: -
+
+### DualDiff+: Dual-Branch Diffusion for High-Fidelity Video Generation with Reward Guidance
+
+arXiv 2025 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.03689
+- Code: https://github.com/yangzhaojason/DualDiff
+
 ### SToRe3D: Sparse Token Relevance in ViTs for Efficient Multi-View 3D Object Detection
 
 CVPR 2026 / 3D Detection
@@ -1508,6 +1832,15 @@ CVPR 2025 / 3D Detection
 - Paper: https://openaccess.thecvf.com/content/CVPR2025/html/Park_Leveraging_Temporal_Cues_for_Semi-Supervised_Multi-View_3D_Object_Detection_CVPR_2025_paper.html
 - Code: -
 
+### UniMamba: Unified Spatial-Channel Representation Learning with Group-Efficient Mamba for LiDAR-based 3D Object Detection
+
+CVPR 2025 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.12009
+- Code: -
+
 ### CorrBEV: Multi-View 3D Object Detection by Correlation Learning with Multi-modal Prototypes
 
 CVPR 2025 / 3D Detection
@@ -1526,6 +1859,15 @@ CVPR 2025 / 3D Detection
 - Paper: https://arxiv.org/abs/2503.11122
 - Code: -
 
+### GBlobs: Explicit Local Structure via Gaussian Blobs for Improved Cross-Domain LiDAR-based 3D Object Detection
+
+CVPR 2025 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://openaccess.thecvf.com/content/CVPR2025/html/Malic_GBlobs_Explicit_Local_Structure_via_Gaussian_Blobs_for_Improved_Cross-Domain_CVPR_2025_paper.html
+- Code: -
+
 ### Towards Accurate and Efficient 3D Object Detection for Autonomous Driving: A Mixture of Experts Computing System on Edge
 
 ICCV 2025 / 3D Detection
@@ -1542,6 +1884,107 @@ CVPR 2025 / 3D Detection
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
 - Paper: https://openaccess.thecvf.com/content/CVPR2025/html/Huang_V2X-R_Cooperative_LiDAR-4D_Radar_Fusion_with_Denoising_Diffusion_for_3D_CVPR_2025_paper.html
+- Code: -
+
+## Reconstruction
+
+### RoadVGGT: Road-Structure-Aware Feed-Forward Road Surface Reconstruction
+
+arXiv 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2607.23758
+- Code: -
+
+### GauSSmart: Enhanced 3D Reconstruction through 2D Foundation Models and Geometric Filtering
+
+arXiv 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2510.14270
+- Code: -
+
+### Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images
+
+CVPR 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2508.03643
+- Code: -
+
+### DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving
+
+CVPR 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2603.08254
+- Code: -
+
+### From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis
+
+CVPR 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2603.27455
+- Code: -
+
+### RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes
+
+CVPR 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://openaccess.thecvf.com/content/CVPR2026/html/Wu_RecEdit-Drive_3D_Reconstruction-Guided_Spatiotemporal_Video_Editing_for_Autonomous_Driving_Scenes_CVPR_2026_paper.html
+- Code: -
+
+### SplatFlow: Self-Supervised Dynamic Gaussian Splatting in Neural Motion Flow Field for Autonomous Driving
+
+CVPR 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2411.15482
+- Code: -
+
+### Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction
+
+ICCV 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2411.16180
+- Code: -
+
+### BezierGS: Dynamic Urban Scene Reconstruction with Bezier Curve Gaussian Splatting
+
+ICCV 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.22099
+- Code: -
+
+### DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction
+
+ICCV 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.13176
+- Code: -
+
+### RadarSplat: Radar Gaussian Splatting for High-Fidelity Data Synthesis and 3D Reconstruction of Autonomous Driving Scenes
+
+ICCV 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.01379
 - Code: -
 
 ## Open-world
@@ -1636,89 +2079,6 @@ CVPR 2025 / Open-world
 - Paper: https://arxiv.org/abs/2502.10674
 - Code: -
 
-## Reconstruction
-
-### RoadVGGT: Road-Structure-Aware Feed-Forward Road Surface Reconstruction
-
-arXiv 2026 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2607.23758
-- Code: -
-
-### GauSSmart: Enhanced 3D Reconstruction through 2D Foundation Models and Geometric Filtering
-
-arXiv 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2510.14270
-- Code: -
-
-### Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images
-
-CVPR 2026 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2508.03643
-- Code: -
-
-### From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis
-
-CVPR 2026 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2603.27455
-- Code: -
-
-### SplatFlow: Self-Supervised Dynamic Gaussian Splatting in Neural Motion Flow Field for Autonomous Driving
-
-CVPR 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2411.15482
-- Code: -
-
-### Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction
-
-ICCV 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2411.16180
-- Code: -
-
-### BezierGS: Dynamic Urban Scene Reconstruction with Bezier Curve Gaussian Splatting
-
-ICCV 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2506.22099
-- Code: -
-
-### DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction
-
-ICCV 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2503.13176
-- Code: -
-
-### RadarSplat: Radar Gaussian Splatting for High-Fidelity Data Synthesis and 3D Reconstruction of Autonomous Driving Scenes
-
-ICCV 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2506.01379
-- Code: -
-
 ## Scene Understanding
 
 ### Distill, Diffuse, Segment: Unsupervised 3D Semantic Segmentation for Autonomous Driving Based on Multi-Level Distillation and Graph Diffusion
@@ -1793,6 +2153,15 @@ CVPR 2025 / Scene Understanding
 - Paper: https://arxiv.org/abs/2503.17752
 - Code: -
 
+### D^3CTTA: Domain-Dependent Decorrelation for Continual Test-Time Adaption of 3D LiDAR Segmentation
+
+CVPR 2025 / Scene Understanding
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://openaccess.thecvf.com/content/CVPR2025/html/Zhao_D3CTTA_Domain-Dependent_Decorrelation_for_Continual_Test-Time_Adaption_of_3D_LiDAR_CVPR_2025_paper.html
+- Code: -
+
 ## World Model
 
 ### ASTAD: Asymmetric Style Transfer for Synthetic-to-Real Adaptation in Autonomous Driving
@@ -1840,6 +2209,15 @@ CVPR 2025 / World Model
 - Paper: https://arxiv.org/abs/2502.11663
 - Code: -
 
+### World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model
+
+ICCV 2025 / World Model
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2507.00603
+- Code: https://github.com/ucaszyp/World4Drive
+
 ### Epona: Autoregressive Diffusion World Model for Autonomous Driving
 
 ICCV 2025 / World Model
@@ -1847,6 +2225,15 @@ ICCV 2025 / World Model
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
 - Paper: https://arxiv.org/abs/2506.24113
+- Code: -
+
+### DriveArena: A Closed-loop Generative Simulation Platform for Autonomous Driving
+
+ICCV 2025 / World Model
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2408.00415
 - Code: -
 
 ## Occupancy Forecasting
