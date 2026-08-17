@@ -9,6 +9,8 @@ CLI を一度実行すると、その時点で読むべき論文の日本語イ�
 (`docs/index.html` をそのまま GitHub Pages でホストしています。`papers.md` は
 [こちら](papers.md)。)
 
+収録件数・検証結果・既知の制限は [STATUS.md](STATUS.md) にまとめています。
+
 ## セットアップ
 
 ```bash
