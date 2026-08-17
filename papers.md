@@ -1,20 +1,20 @@
 # 論文ダイジェスト
 
-生成日時: 2026-08-17 10:51 / 収録 234 件
+生成日時: 2026-08-17 22:42 / 収録 234 件
 
 ## トピック
 
 - [Occupancy](#occupancy) — 62 件
 - [Gaussian Splatting](#gaussian-splatting) — 36 件
 - [HD Map](#hd-map) — 35 件
-- [AD Perception](#ad-perception) — 32 件
+- [AD Perception](#ad-perception) — 33 件
 - [3D Detection](#3d-detection) — 25 件
-- [Reconstruction](#reconstruction) — 11 件
 - [Open-world](#open-world) — 10 件
+- [Reconstruction](#reconstruction) — 10 件
 - [Scene Understanding](#scene-understanding) — 9 件
-- [World Model](#world-model) — 8 件
-- [Occupancy Forecasting](#occupancy-forecasting) — 3 件
+- [World Model](#world-model) — 9 件
 - [Topology](#topology) — 3 件
+- [Occupancy Forecasting](#occupancy-forecasting) — 2 件
 
 ## Occupancy
 
@@ -96,7 +96,17 @@ arXiv 2026 / Occupancy
 
 arXiv 2026 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+LiDARベースの3D semantic occupancy predictionでは、点群のスパース性・不完全性を補うために複数スイープを重ねる手法が一般的だが、計算コストの増加や自己位置推定誤差によるノイズが実用上の課題となる。本論文は単一スイープの点群だけを使い、range viewから得られる文脈情報とvoxel viewの幾何情報を組み合わせるDual Range-Voxel Representation (DRVR)を提案している。range-view encoderでコンパクトな文脈特徴を、幾何を考慮したvoxel-view encoderでマルチスケールの空間特徴を抽出し、両者をvoxel-to-range / range-to-voxelの双方向融合で統合する。nuScenes-Occupancy、SemanticKITTI、SemanticPOSSで評価し、nuScenes-Occupancyでは多スイープ手法に対しmIoU +5.4%、2.1倍の高速化を報告している。
+
+**新規性**
+
+multi-sweepの積み上げに頼らず、単一スイープのrange viewとvoxel viewという2つの表現を双方向に融合することで密な空間情報を補う点が従来手法との違いである。これにより多スイープ由来の計算負荷とpose変換ノイズの問題を回避している。
+
+**読む理由**
+
+occupancy予測における入力表現の設計（range view と voxel view の使い分けと融合）という観点で参考になり、単一スイープでの精度と効率の両立は車載でのリアルタイム環境認識を考えるうえで示唆がある。
 
 - Paper: https://arxiv.org/abs/2606.31688
 - Code: -
@@ -151,7 +161,17 @@ arXiv 2026 / Occupancy
 
 CVPR 2026 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+自動運転の3D semantic occupancy predictionにおいて、long-tailなクラス分布とOOD入力への脆弱性を課題として扱っている。既存手法は未知物体を稀少クラスに過信して割り当ててしまうため、本論文はプロトタイプを用いた特徴の補完・稀少クラス表現の強化と、学習不要のOODスコアリングを組み合わせたProOODを提案する。遮蔽領域をクラス一貫性のある特徴で埋めるsemantic imputation、tail miningによる稀少クラス強化、局所logitの整合性とプロトタイプ照合を融合したEchoOODの3要素からなる。5つのデータセットでin-distributionのoccupancy予測とOOD検出の双方を評価している。
+
+**新規性**
+
+occupancy予測の精度向上とOOD検出を別々に扱うのではなく、プロトタイプによる稀少クラス表現の強化がOODの誤吸収を抑えるという観点で両者を結び付けた点が特徴。さらにEchoOODは追加学習を必要とせず、既存モデルにplug-and-playで組み込めるvoxel単位のOODスコアを与える。
+
+**読む理由**
+
+occupancy予測を安全性の観点から評価する流れ(未知物体の扱い、予測の校正)は今後の環境認識研究で重要度が増しており、その具体的なアプローチとベンチマーク設定を把握できる。plug-and-play設計のため既存のoccupancyパイプラインへの適用可能性という点でも参考になる。
 
 - Paper: https://arxiv.org/abs/2604.01081
 - Code: https://github.com/7uHeng/ProOOD
@@ -318,7 +338,17 @@ arXiv 2026 / Occupancy
 
 arXiv 2026 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+voxel単位で意味と幾何を表す3D semantic occupancy predictionは自動運転の認識に有用な一方、大規模シーンでは計算量が膨大でリアルタイム実装が難しい。本論文は、シーンが本質的に疎であることを利用し、semantic priorとuncertainty priorでfree spaceからの画像特徴投影を抑えつつ、unsigned distanceの明示的エンコードで幾何的整合性を保った疎な表現を構築する。その上で、hyper cross sparse convolution・generative upsampling・adaptive pruningを組み合わせたcascade sparse completionモジュールでcoarse-to-fineに補完し、最後にOCRベースのmask decoderで軽量なquery-context相互作用によりvoxel予測を精緻化する。SemanticKITTIとOcc3D-nuScenesで精度と効率の双方の改善を報告している。
+
+**新規性**
+
+密なvolumetric特徴に対する高コストなattentionに頼らず、semanticとuncertaintyという明示的なpriorで疎化の対象を決めたうえで、cascade型のsparse completionとOCRベースのmask decoderを組み合わせた点が従来の疎化手法と異なる。
+
+**読む理由**
+
+occupancy predictionの実用化で最大の障壁である計算コストに対し、疎性の使い方を priorベースで設計する具体例として参考になる。BEV/occupancy系の効率化アーキテクチャの動向を追ううえで押さえておきたい一本。
 
 - Paper: https://arxiv.org/abs/2601.11396
 - Code: -
@@ -485,7 +515,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+自動運転の3D semantic occupancy predictionを3D Gaussian Splattingで行う手法。既存の3DGSベース手法が、カテゴリ間・領域間の意味的な相関を無視した一様な特徴集約をしている点、MLPによる反復最適化に幾何的制約がなく境界が曖昧になる点、動的物体と静的シーンを結合したまま最適化することで偏りが生じる点を課題として挙げている。これに対し、幾何グラフと意味グラフの二重構造を動的に構築するDual Gaussians Graph Attentionと、動的・静的を分離して最適化するattention機構を組み合わせたGraphGSOccを提案する。SurroundOcc-nuScenes、Occ3D-nuScenes、OpenOcc、KITTIの各occupancyベンチマークでstate-of-the-artを主張している。
+
+**新規性**
+
+Gaussianのポーズに応じてKNNの探索半径を適応的に変える幾何グラフと、cosine類似度で上位M個のノードを残す意味グラフを併用し、さらに階層ごとに粒度の異なるattentionで境界詳細とobject-level topologyを分けて扱う点が従来の一様な特徴集約と異なる。加えて、semantic probability distributionを用いて動的物体と静的シーンの最適化を明示的に切り離している。
+
+**読む理由**
+
+3DGS表現をoccupancy predictionに使う流れの中で、Gaussian間の関係をグラフとして構造化する設計を示しており、表現の効率と精度を両立させる方向性の参考になる。SurroundOccでmIoU 25.20%、GPUメモリ6.8GBとGaussianWorld比で精度・メモリ双方の改善を報告している点も、実装コストを見るうえで有用。
 
 - Paper: https://arxiv.org/abs/2506.14825
 - Code: -
@@ -494,7 +534,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+自動運転向けの 3D semantic occupancy prediction において、dense voxel 表現は走行シーンの疎性を無視して非効率であり、近年の sparse Gaussian による object-centric 表現も楕円体という形状事前分布のため、直方体・円柱・不規則形状といった多様な物体形状を表すには大量のプリミティブを密に敷き詰める必要があるという課題を扱う。本論文は形状表現力の高い superquadrics をシーンプリミティブとして採用し、各 superquadric を幾何事前を持つ occupancy 確率分布と解釈する probabilistic superquadric mixture model を構成して、混合により semantics を算出する。これを組み込んだ QuadricFormer に、occupied 領域へプリミティブを集約する pruning-and-splitting モジュールを導入する。nuScenes での実験で、効率を保ちながら state-of-the-art の性能を達成したと報告している。
+
+**新規性**
+
+Gaussian(楕円体)ベースの sparse なシーン表現を superquadrics に置き換え、形状の多様性によって少数のプリミティブで複雑な構造を表現できる点が従来との違いである。さらに superquadric を occupancy の確率分布として扱う mixture model と、pruning-and-splitting による配置最適化を組み合わせている。
+
+**読む理由**
+
+occupancy prediction の表現がボクセルから Gaussian、さらに superquadric へと「プリミティブの選び方」で効率と表現力を competing させる流れを示す一例であり、環境認識のシーン表現設計を追う上で参考になる。地図生成・occupancy 系のスパース表現を検討する際の設計選択肢として押さえておく価値がある。
 
 - Paper: https://arxiv.org/abs/2506.10977
 - Code: -
@@ -512,7 +562,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+カメラ画像のみから3D semantic occupancyを推定する研究。従来手法はvoxelが占有されているか否か(occupancy state)を明示的に推論するため、特徴量の割り当て誤りが多く発生し、またサンプル不足によりクラス推論の学習も不十分だという課題を挙げている。DSOccでは、学習を伴わない方法で算出したsoft occupancy confidenceを画像特徴に掛け合わせることでvoxelに深度の情報を持たせ、occupancy stateを暗黙的・適応的に扱いながらクラス推論と同時に解く。さらに、学習済みの画像semantic segmentationの結果をoccupancy確率とともに複数フレーム分融合し、クラス推論を補助する。
+
+**新規性**
+
+occupancy stateを明示的に判定せず、非学習的に求めたsoft confidenceを介して暗黙的に扱う点と、特徴学習を強化するのではなく既存の学習済みsemantic segmentationを多フレーム融合して直接活用する点が従来と異なる。
+
+**読む理由**
+
+カメラのみのoccupancy predictionにおいて、深度手がかりと既存2D認識器をどう組み合わせて精度を底上げするかの一例であり、SemanticKITTI・SSCBench-KITTI-360・Occ3D-nuScenesという主要ベンチマークでの比較も示されているため、occupancy系手法の設計動向を追ううえで参考になる。
 
 - Paper: https://arxiv.org/abs/2505.20951
 - Code: -
@@ -521,7 +581,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+自動運転の3D semantic occupancy predictionでは、full supervisionはvoxel単位の高コストなアノテーションを必要とし、self-supervisionは指導信号が弱く性能が伸びないという二択の問題がある。OccLEはこの中間を狙い、少量のvoxelアノテーションだけで高い性能を保つラベル効率の良い枠組みを提案する。semanticとgeometryの学習を分離し、semantic側は2D foundation modelの蒸留で2D/3D整合の擬似ラベルを得て、geometry側は画像とLiDARをcross-planeで統合し半教師ありで学習する。両者のfeature gridをDual Mambaで融合し、scatter-accumulated projectionで未アノテーション領域も擬似ラベルにより監督する。SemanticKITTIとOcc3D-nuScenesで、voxelアノテーション10%でも競合手法に匹敵する結果を示している。
+
+**新規性**
+
+full supervisionでもself-supervisionでもなく、semanticとgeometricのタスクを明示的に分離し、foundation model蒸留による擬似ラベルと半教師あり幾何学習を組み合わせてラベル依存を大幅に下げた点が従来と異なる。融合にDual Mambaを用い、未アノテーション予測にも整合した擬似ラベルで監督を与える設計も特徴。
+
+**読む理由**
+
+occupancy予測の実用化ではvoxelアノテーションのコストが最大のボトルネックであり、少量ラベルでどこまで到達できるかを示す本研究はデータ構築戦略を考えるうえで参考になる。2D foundation modelの蒸留とLiDAR・画像の役割分担という設計は、地図生成や環境認識の他タスクにも転用しやすい。
 
 - Paper: https://arxiv.org/abs/2505.20617
 - Code: https://github.com/NerdFNY/OccLE
@@ -530,7 +600,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+マルチモーダルな3D semantic occupancy prediction において、点群と画像の特徴のスケールや分布の違いから固定的な近傍融合では対応付けが偏ってしまう問題と、疎でノイズの多いラベルしか使えないために表面の細部が失われる問題を扱っている。前者に対しては、対象のスケールに応じて探索近傍を変える双方向対称の retrieval 機構を導入し、大きな物体では近傍を広げて文脈を取り込み、小さな物体では狭めてノイズを抑える。後者に対しては、融合特徴から画像をレンダリングする 3D Gaussian Splatting ベースの volume rendering を組み込み、photometric consistency による監督で2D-3Dの整合を同時に最適化する。これらをまとめた枠組みを TACOcc として nuScenes と SemanticKITTI で評価している。
+
+**新規性**
+
+固定近傍でのcross-modal融合ではなくターゲットのスケールに適応して近傍幅を変える対称的な特徴対応付けを行う点、および 3D Gaussian Splatting による描画を occupancy 学習の追加監督として使い疎ラベルの不足を補う点が従来のマルチモーダル occupancy 手法との差分である。
+
+**読む理由**
+
+camera-LiDAR融合の occupancy 予測において、レンダリングベースの自己教師的監督をどう組み込むかという最近の流れを具体的に示す例であり、疎なアノテーション下で細部の形状精度を上げる設計指針の参考になる。
 
 - Paper: https://arxiv.org/abs/2505.12693
 - Code: -
@@ -539,7 +619,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+自動運転や屋外ロボットの安全な走行には3D semantic occupancy predictionが重要だが、従来主流のvoxel表現はメモリ効率が悪く、カメラのみの構成では幾何精度に限界がある。本論文は3D Gaussianをシーン表現として使い、LiDARとカメラを融合するoccupancy予測フレームワークGaussianFormer3Dを提案する。LiDARから得た幾何情報でGaussianを初期化し、3D空間に持ち上げた融合特徴を用いてGaussianを反復的に更新する。on-road/off-road両方の実データセットで評価している。
+
+**新規性**
+
+Gaussianベースのoccupancy予測をcamera-onlyからmulti-modalへ拡張し、voxel-to-Gaussian初期化でLiDAR由来の幾何priorをGaussianに与える点が新しい。さらに2D画像平面ではなくlifted 3D空間でLiDAR-guided 3D deformable attentionを行い、融合特徴でGaussianを精緻化する。
+
+**読む理由**
+
+occupancy予測の表現がvoxelからGaussianなどの疎・連続表現へ移りつつある流れと、それをLiDAR融合へ広げる具体的な設計が分かる。メモリ・効率の改善を伴う点は車載実装を意識した環境認識研究として参考になる。
 
 - Paper: https://arxiv.org/abs/2505.10685
 - Code: -
@@ -557,7 +647,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+屋外走行環境の3D semantic occupancy予測において、カメラ主体の手法は幾何精度が不足し、LiDAR主体の手法は意味情報に乏しいという相補的な弱点を扱った研究。MS-Occは、特徴レベルの中間段階とvoxelレベルの後段という2つの段階でLiDARとカメラを融合するフレームワークを提案する。中間段階では疎なLiDAR depthをGaussian kernel renderingで密な幾何priorに変換して画像特徴を補強し、逆にdeformable cross-attentionでLiDAR voxelに意味情報を与える。後段ではモダリティ間のvoxel特徴を適応的に重み付けし、分類確信度の高いvoxelを基準にself-attentionで意味的な不整合を解消する。nuScenes-OpenOccupancyとSemanticKITTIで既存手法を上回る結果を報告している。
+
+**新規性**
+
+融合を単一段階で行う従来のマルチモーダルoccupancy手法と異なり、画像特徴とvoxel特徴の両方のレベルで双方向に補完する多段構成を採る点が特徴。特に、LiDAR depthのGaussian kernel renderingによる密な幾何prior注入と、確信度に基づくvoxel単位の意味的整合化モジュールを組み合わせている。
+
+**読む理由**
+
+occupancy予測におけるLiDAR-camera融合の設計をどの段階で行うべきかという論点に対する具体的な回答例であり、環境認識の融合アーキテクチャ動向を追ううえで参考になる。小物体の認識改善に言及している点も、実用的なocc手法の評価軸として押さえておく価値がある。
 
 - Paper: https://arxiv.org/abs/2504.15888
 - Code: -
@@ -566,7 +666,17 @@ arXiv 2025 / Occupancy
 
 ICRA 2026 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+車載カメラからの3D semantic occupancy predictionは、遮蔽や低照度といった条件下では現在の観測だけでは不十分になる。本論文はLMPOccとして、過去の走行で蓄積したglobal occupancy mapをlong-term memory priorとして現在の推論に与え、同時に新しい観測でglobal mapを更新する枠組みを提案する。priorと現在特徴を適応的に統合する軽量なCurrent-Prior Fusionモジュールと、モデル非依存のprior形式を導入し、既存のoccupancy予測手法にplug-and-playで組み込めるようにしている。Occ3D-nuScenesでの評価に加え、複数車両のcrowdsourcingによる大規模global occupancy map構築と、occupancy由来のdense depthを用いた3D open-vocabulary map構築も示している。
+
+**新規性**
+
+単一走行・単一車両の時系列集約に留まっていた従来のoccupancy予測に対し、過去走行由来のglobal occupancy mapをpriorとして再利用しつつ継続的に更新するループを作った点が新しい。prior形式をモデル非依存に設計したことで、特定のbaselineに縛られずplug-and-playで適用できる。
+
+**読む理由**
+
+occupancyを「その場の予測結果」ではなく継続更新される地図資産として扱う設計であり、HD mapのmap update/クラウドソーシング更新の議論とoccupancy予測を橋渡しする事例として参考になる。occupancy由来のdepthをopen-vocabulary mapに繋げている点も、地図表現の拡張方向を追ううえで見どころがある。
 
 - Paper: https://arxiv.org/abs/2504.13596
 - Code: -
@@ -584,7 +694,17 @@ CVPR 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+Open-worldな3D semantic occupancy予測、つまり事前定義したクラス以外の未知物体も含めてvoxel表現を作る問題に取り組んでいる。VLMの知識を使うアプローチとして、2D pseudo-labelを従来の教師あり学習で使う方法はラベル空間に縛られ、逆に画像埋め込みへ直接アラインする方法はVLM内の画像・テキスト表現の不整合で性能が安定しない、という二つの弱点を指摘する。提案手法AGOは、サラウンド画像を3D埋め込み、クラスプロンプトをテキスト埋め込みに変換し、3D pseudo-labelを用いた類似度ベースのgrounding学習を行う。さらにmodality adapterで3D埋め込みをVLM画像埋め込みと整合する空間へ写し、モダリティ間のギャップを縮める。
+
+**新規性**
+
+固定ラベル空間の疑似ラベル学習とVLM埋め込みへの直接アラインのどちらにも寄らず、類似度ベースのgrounding学習とmodality adapterを組み合わせて両者の欠点を回避している点が異なる。Occ3D-nuScenesでzero-shot/few-shotの未知物体予測を改善しつつ、closed-worldの自己教師あり設定でも従来を4.09 mIoU上回ると報告している。
+
+**読む理由**
+
+occupancy予測をclosed-setのセマンティクスからopen-vocabularyへ拡張する流れの代表例で、VLMを3D空間表現に接続する際の実践的な設計(pseudo-labelとembedding alignmentの折り合い)が参考になる。未知物体を扱えるocc表現は地図生成や走行可能領域推定の前段としても重要。
 
 - Paper: https://arxiv.org/abs/2504.10117
 - Code: https://github.com/EdwardLeeLPZ/AGO
@@ -593,7 +713,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+車載サラウンドビューカメラのみを入力として、周囲環境の幾何と意味を表す3D semantic occupancyを推定する研究。従来はサンプリングや特徴表現などモデル内部の構造改良に注力してきたが、本論文は3D object detectionを補助ブランチとして加えるマルチタスク学習で追加の3D教師信号を与えるアプローチを取る。これにより中間特徴が小さな動的物体を捉える能力が強化され、自転車・バイク・歩行者といったvulnerable road user (VRU) の表現が改善される。nuScenesで雨天・夜間を含む条件で評価し、IoU 31.73%、mIoU 20.91%を報告している。
+
+**新規性**
+
+occupancyネットワーク内部の構造設計を工夫する従来路線ではなく、3D detectionの補助タスクによる追加の3D監督で中間特徴自体を鍛える点が異なる。特に小さな動的物体・VRUの検出性能向上を狙いとして明示している。
+
+**読む理由**
+
+occupancy predictionと3D detectionをタスク統合する流れの具体例であり、安全上重要な小物体をocc表現でどう扱うかという課題設定を把握できる。雨天・夜間を含む評価設定も環境認識の頑健性を追う上で参考になる。
 
 - Paper: https://arxiv.org/abs/2504.04732
 - Code: https://github.com/DanielMing123/Inverse
@@ -611,7 +741,17 @@ arXiv 2025 / Occupancy
 
 arXiv 2025 / Occupancy
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+自動運転の認識で重要な Semantic Scene Completion (SSC) を、カメラ中心の軽量な構成で解こうとした研究。従来手法は精度を上げるために計算量とメモリ消費の大きい 3D 演算を多用しており、学習・推論時のプラットフォーム負荷が課題だった。本論文は efficient voxel transformer (EVT) を用いた軽量なアーキテクチャに、LiDAR モデルからのクロスモーダル蒸留(feature similarity distillation、TPV distillation、prediction alignment distillation)を組み合わせ、計算負荷を抑えつつ精度を保つ枠組み L2COcc を提案している。LiDAR 入力にも対応する構成となっている。
+
+**新規性**
+
+重い 3D 演算に頼らず EVT で occupancy を推定しつつ、feature・TPV 表現・予測結果の3レベルで LiDAR モデルの知識をカメラモデルへ蒸留する点が従来のカメラベース SSC と異なる。結果として SemanticKITTI と SSCBench-KITTI-360 で既存の vision-based SSC を上回りつつ、メモリと推論時間を 23% 以上削減したと報告している。
+
+**読む理由**
+
+occupancy 推定は BEV/HD Map と並ぶ車載環境認識の中核表現であり、精度と実車搭載可能な計算コストを同時に satisfy する方向性の実例として参考になる。LiDAR から camera への蒸留はマルチモーダル前提のデータセットを活かす一般的な手法設計として、地図生成・認識の他タスクにも転用しやすい。
 
 - Paper: https://arxiv.org/abs/2503.12369
 - Code: -
@@ -889,22 +1029,42 @@ CVPR 2026 / Gaussian Splatting
 - Paper: https://arxiv.org/abs/2603.18510
 - Code: -
 
+### SplatFlow: Self-Supervised Dynamic Gaussian Splatting in Neural Motion Flow Field for Autonomous Driving
+
+CVPR 2025 / Gaussian Splatting
+
+**概要**
+
+動的な市街地シーンをDynamic Gaussian Splattingで再構成する際、従来は追跡済み3Dバウンディングボックスなど高コストな物体レベルの教師情報が必要で、スケールしないという課題があった。SplatFlowは、LiDAR点群とGaussianの時間的な動きを連続的なmotion flow fieldとして陰関数で表すNeural Motion Flow Field (NMFF)を導入し、これを4D Gaussian表現と統合することで、3Dボックスの教師なし(自己教師的)に4D時空間表現を学習する。静的背景を3D Gaussian、動的物体を4D Gaussianとして分離表現し、NMFFが各4D Gaussianの時間対応を与えることで時系列特徴を集約し、動的部分のcross-view一貫性を高める。さらに2D foundation modelの特徴を4D表現へ蒸留して動的物体の識別を改善し、RGB/depth/flowのnovel view synthesisを行う。
+
+**新規性**
+
+追跡済み3Dバウンディングボックスによる物体レベル教師を前提とせず、motion flow fieldを陰関数でモデル化するNMFFの中に4D Gaussianを組み込むことで静的/動的分解と時間対応付けを同時に扱う点が従来手法との違いである。また2D foundation modelの特徴蒸留を4D時空間表現に組み合わせ、動的物体の識別を教師ラベルに頼らず補強している。
+
+**読む理由**
+
+アノテーションコストを避けつつ動的な走行シーンの4D再構成を行う方向性は、大規模な走行ログからの地図・シーン表現構築やデータ生成に直結する。Waymo/KITTIでの再構成・novel view synthesisにおける最新手法として、Gaussian Splattingベースの自動運転向けシーン表現の動向を押さえるうえで参考になる。
+
+- Paper: https://arxiv.org/abs/2411.15482
+- Code: -
+
 ### VoteSplat: Hough Voting Gaussian Splatting for 3D Scene Understanding
 
 ICCV 2025 / Gaussian Splatting
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+3DGSは高品質・リアルタイムなnovel view synthesisを実現している一方で、幾何と外観のモデリングに偏っており、シーンの意味的な理解が弱いという課題がある。本論文は、Hough votingの考え方を3DGSに統合したVoteSplatを提案する。SAMでinstance segmentationを行って2Dのvote mapを作り、Gaussian primitiveに空間オフセットベクトルを埋め込むことで、2Dの投票を3D空間の投票へ結び付けて物体中心を推定する。さらにdepth distortion制約で奥行き方向の定位を精緻化し、2Dの意味情報をvoting pointsを介して3D点群へ写す構成とする。
+
+**新規性**
+
+高次元CLIP特徴を各Gaussianに直接埋め込む従来のsemantic 3DGSとは異なり、Hough votingによる物体中心への投票を介して2D意味を3Dへ橋渡しし、学習コストを抑えつつ意味の曖昧さを回避している点が新しい。open-vocabulary localizationやclickベースの物体定位、hierarchical segmentationを同一枠組みで扱える。
+
+**読む理由**
+
+Gaussian Splattingを単なる再構成表現から「物体単位で問い合わせ可能な表現」へ拡張する流れを示す一例であり、地図・環境認識側で3DGS表現に意味やinstance情報を持たせる設計の参考になる。voting経由で2D基盤モデルの意味を3Dへ持ち上げる手法は、コスト制約のある車載側の意味付き再構成にも波及しうる。
 
 - Paper: https://arxiv.org/abs/2506.22799
-- Code: -
-
-### Toward Real-world BEV Perception: Depth Uncertainty Estimation via Gaussian Splatting
-
-CVPR 2025 / Gaussian Splatting
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2504.01957
 - Code: -
 
 ### CoDa-4DGS: Dynamic Gaussian Splatting with Context and Deformation Awareness for Autonomous Driving
@@ -1084,7 +1244,17 @@ arXiv 2026 / HD Map
 
 arXiv 2026 / HD Map
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+オンラインHDマップ構築では中間表現として固定解像度の密なBEVグリッドが使われるのが一般的だが、地図要素は空間的に疎で一方で細かい幾何精度が要求されるため、一様なBEV表現は冗長で非効率という問題がある。本論文はBEV平面上のGaussian primitiveの集合でシーンを表現するGaussianMapを提案する。各primitiveは幾何的属性と特徴ベクトルを持ち柔軟な局所領域を担うため、地図に関係する領域へ表現能力を集中的に配分できる。feed-forwardなGaussian encoderがGaussian同士の相互作用モデリングとマルチセンサ特徴集約を通じてprimitiveを段階的に精緻化し、それをsplattingしてBEV特徴マップに変換した後、ベクタマップとしてデコードする。
+
+**新規性**
+
+密な一様BEVグリッドの代わりに、適応的に配置されるBEV上のGaussian primitive集合を中間表現として学習し、splattingを介してベクタマップ予測につなぐ点が従来手法と異なる。カメラ単独とカメラ+LiDAR融合の双方に対応する点も特徴である。
+
+**読む理由**
+
+Gaussian表現をオンラインHDマップ構築の中間表現として使う流れを示す例で、BEVグリッド中心だった地図生成の設計が疎・適応的な表現へ移行しうることを確認できる。nuScenesとArgoverse 2でcamera-onlyおよびcamera-LiDAR fusion設定のstate-of-the-artを報告しており、ベンチマーク動向の把握にも有用である。
 
 - Paper: https://arxiv.org/abs/2606.31177
 - Code: -
@@ -1650,6 +1820,25 @@ arXiv 2025 / AD Perception
 - Paper: https://arxiv.org/abs/2503.11265
 - Code: -
 
+### Toward Real-world BEV Perception: Depth Uncertainty Estimation via Gaussian Splatting
+
+CVPR 2025 / AD Perception
+
+**概要**
+
+マルチカメラ画像から BEV 表現を作る際、近年主流の projection ベース(クエリ学習で明示的な depth 推定を回避する方式)は不確実性のモデル化がなく計算コストも高い、という問題を扱っている。本論文は Lift-Splat-Shoot 系の unprojection ベースを再検討し、depth 分布の soft mean と分散を学習することで空間的な広がり(=物体のスケール)を暗黙的に捉える GaussianLSS を提案する。得られた depth 分布を 3D Gaussian に変換し、rasterize することで不確実性を織り込んだ BEV feature を構成する。nuScenes で評価し、unprojection 系の中で最高性能を報告している。
+
+**新規性**
+
+LSS の離散的な depth bin ではなく depth 分布の平均と分散を明示的に扱い、それを 3D Gaussian の rasterization として BEV に落とし込む点が従来と異なる。結果として projection ベース手法に対し 2 倍の速度と 0.3 倍のメモリで、IoU 差 0.7% の同等性能を達成している。
+
+**読む理由**
+
+BEV 知覚の主流が projection ベースに寄るなかで、depth の不確実性を明示的に持たせた unprojection 系の再評価という逆張りの方向性を示しており、実車適用を意識した速度・メモリ面の議論も含む。Gaussian Splatting の rasterization を生成ではなく知覚の特徴構成に使う応用例としても参考になる。
+
+- Paper: https://arxiv.org/abs/2504.01957
+- Code: -
+
 ### End-to-End Driving with Online Trajectory Evaluation via BEV World Model
 
 ICCV 2025 / AD Perception
@@ -1886,107 +2075,6 @@ CVPR 2025 / 3D Detection
 - Paper: https://openaccess.thecvf.com/content/CVPR2025/html/Huang_V2X-R_Cooperative_LiDAR-4D_Radar_Fusion_with_Denoising_Diffusion_for_3D_CVPR_2025_paper.html
 - Code: -
 
-## Reconstruction
-
-### RoadVGGT: Road-Structure-Aware Feed-Forward Road Surface Reconstruction
-
-arXiv 2026 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2607.23758
-- Code: -
-
-### GauSSmart: Enhanced 3D Reconstruction through 2D Foundation Models and Geometric Filtering
-
-arXiv 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2510.14270
-- Code: -
-
-### Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images
-
-CVPR 2026 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2508.03643
-- Code: -
-
-### DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving
-
-CVPR 2026 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2603.08254
-- Code: -
-
-### From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis
-
-CVPR 2026 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2603.27455
-- Code: -
-
-### RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes
-
-CVPR 2026 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://openaccess.thecvf.com/content/CVPR2026/html/Wu_RecEdit-Drive_3D_Reconstruction-Guided_Spatiotemporal_Video_Editing_for_Autonomous_Driving_Scenes_CVPR_2026_paper.html
-- Code: -
-
-### SplatFlow: Self-Supervised Dynamic Gaussian Splatting in Neural Motion Flow Field for Autonomous Driving
-
-CVPR 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2411.15482
-- Code: -
-
-### Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction
-
-ICCV 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2411.16180
-- Code: -
-
-### BezierGS: Dynamic Urban Scene Reconstruction with Bezier Curve Gaussian Splatting
-
-ICCV 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2506.22099
-- Code: -
-
-### DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction
-
-ICCV 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2503.13176
-- Code: -
-
-### RadarSplat: Radar Gaussian Splatting for High-Fidelity Data Synthesis and 3D Reconstruction of Autonomous Driving Scenes
-
-ICCV 2025 / Reconstruction
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2506.01379
-- Code: -
-
 ## Open-world
 
 ### GeoSAM-3D: Geodesic Prompt Propagation for Open-Vocabulary 3D Scene Segmentation from Monocular Video
@@ -2077,6 +2165,98 @@ CVPR 2025 / Open-world
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
 - Paper: https://arxiv.org/abs/2502.10674
+- Code: -
+
+## Reconstruction
+
+### RoadVGGT: Road-Structure-Aware Feed-Forward Road Surface Reconstruction
+
+arXiv 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2607.23758
+- Code: -
+
+### GauSSmart: Enhanced 3D Reconstruction through 2D Foundation Models and Geometric Filtering
+
+arXiv 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2510.14270
+- Code: -
+
+### Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images
+
+CVPR 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2508.03643
+- Code: -
+
+### DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving
+
+CVPR 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2603.08254
+- Code: -
+
+### From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis
+
+CVPR 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2603.27455
+- Code: -
+
+### RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes
+
+CVPR 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://openaccess.thecvf.com/content/CVPR2026/html/Wu_RecEdit-Drive_3D_Reconstruction-Guided_Spatiotemporal_Video_Editing_for_Autonomous_Driving_Scenes_CVPR_2026_paper.html
+- Code: -
+
+### Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction
+
+ICCV 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2411.16180
+- Code: -
+
+### BezierGS: Dynamic Urban Scene Reconstruction with Bezier Curve Gaussian Splatting
+
+ICCV 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.22099
+- Code: -
+
+### DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction
+
+ICCV 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.13176
+- Code: -
+
+### RadarSplat: Radar Gaussian Splatting for High-Fidelity Data Synthesis and 3D Reconstruction of Autonomous Driving Scenes
+
+ICCV 2025 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2506.01379
 - Code: -
 
 ## Scene Understanding
@@ -2177,7 +2357,17 @@ ECCV 2026 / World Model
 
 CVPR 2026 / World Model
 
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+**概要**
+
+既存の driving world model は入力条件付きの生成に特化していて、走行環境そのものを3Dで理解・推論する能力を欠いているという課題に取り組んだ論文。point cloud や BEV 特徴では言語情報と3D空間の対応付けが不正確になる点を問題視し、3D Gaussian をシーン表現の基盤に据えた統一フレームワークを提案している。各 Gaussian primitive に言語特徴を埋め込むことで、3Dシーン理解とマルチモーダル生成の両方を1つの枠組みで扱う。nuScenes と NuInteract で評価し、state-of-the-art を達成したと報告している。
+
+**新規性**
+
+言語特徴を Gaussian primitive の段階で埋め込む early modality alignment と、タスクに応じて冗長な Gaussian を削って LLM へコンパクトな3Dトークンを渡す language-guided sampling を導入した点が従来と異なる。さらに vision-language model が捉えた高レベルの言語条件と低レベルの画像条件を組み合わせる dual-condition 生成モデルを設計している。
+
+**読む理由**
+
+world model を単なる生成器ではなく3Dシーン理解の器として再定義する流れを示しており、Gaussian Splatting 表現が認識と生成を橋渡しする基盤になりうることを具体的に示している。地図生成・環境認識側でも、3D表現と言語・LLM の結合をどう設計するかの参考になる。
 
 - Paper: https://arxiv.org/abs/2512.23180
 - Code: -
@@ -2189,6 +2379,25 @@ CVPR 2026 / World Model
 *(日本語要約は未生成。`paper-digest summarize` を実行してください)*
 
 - Paper: https://arxiv.org/abs/2512.12751
+- Code: -
+
+### GaussianWorld: Gaussian World Model for Streaming 3D Occupancy Prediction
+
+CVPR 2025 / World Model
+
+**概要**
+
+カメラ入力からの3D occupancy prediction において、既存手法は過去フレームの特徴を単純に融合するだけで、走行シーンが連続的に変化するという事前知識を活かせていない点を問題視している。本論文はこのタスクを「現在のセンサ入力を条件とした4D occupancy forecasting」として捉え直し、シーンの時間変化を(1) 自車運動による静的シーンの整合、(2) 動的物体の局所的な移動、(3) 新たに観測された領域の補完、の3要素に分解する。これらの事前知識を3D Gaussian 表現の空間上で明示的に扱う Gaussian world model を構築し、現在のRGB観測を条件に次時刻のシーン状態を推論する。nuScenes で評価し、単一フレーム版に対して追加計算なしで mIoU を2%以上改善したと報告している。
+
+**新規性**
+
+過去フレーム特徴の融合ではなく、シーンの進化そのものを予測対象とする world model として occupancy prediction を定式化した点が従来と異なる。さらに、その進化を自車運動・動的物体の移動・新規観測領域の補完という解釈可能な3要素に分解し、3D Gaussian という疎な物体中心表現の空間上で扱っている。
+
+**読む理由**
+
+occupancy prediction と world model、そして 3D Gaussian 表現という近年の主要な流れが一本に統合された代表例であり、ストリーミング入力を前提とした環境認識の設計思想を把握するのに適している。静的・動的の分離という考え方は地図生成や逐次的な地図更新の枠組みにも通じる。
+
+- Paper: https://arxiv.org/abs/2412.10373
 - Code: -
 
 ### HERMES: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation
@@ -2236,35 +2445,6 @@ ICCV 2025 / World Model
 - Paper: https://arxiv.org/abs/2408.00415
 - Code: -
 
-## Occupancy Forecasting
-
-### SelfOccFlow: Towards end-to-end self-supervised 3D Occupancy Flow prediction
-
-arXiv 2026 / Occupancy Forecasting
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2602.23894
-- Code: -
-
-### GaussianWorld: Gaussian World Model for Streaming 3D Occupancy Prediction
-
-CVPR 2025 / Occupancy Forecasting
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2412.10373
-- Code: -
-
-### UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving
-
-ICCV 2025 / Occupancy Forecasting
-
-*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
-
-- Paper: https://arxiv.org/abs/2503.24381
-- Code: -
-
 ## Topology
 
 ### HGeo-TopoMap: Boosting Topological Mapping with Hierarchical Geometric Priors
@@ -2293,3 +2473,23 @@ CVPR 2025 / Topology
 
 - Paper: https://arxiv.org/abs/2411.18894
 - Code: https://github.com/MICLAB-BUPT/T2SG
+
+## Occupancy Forecasting
+
+### SelfOccFlow: Towards end-to-end self-supervised 3D Occupancy Flow prediction
+
+arXiv 2026 / Occupancy Forecasting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2602.23894
+- Code: -
+
+### UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving
+
+ICCV 2025 / Occupancy Forecasting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2503.24381
+- Code: -

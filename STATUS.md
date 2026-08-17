@@ -11,7 +11,7 @@
 | 公開ページ | https://yoshiri.github.io/paper-digest/ |
 | Pages ソース | `main` ブランチの `/docs` (`docs/index.html`) |
 | 収録論文 | 234 件 (arXiv 145 / CVF 89) |
-| 日本語要約済み | 15 件 (残り 219 件は未生成) |
+| 日本語要約済み | 35 件 (残り 199 件は未生成) |
 | Code URL 取得済み | 48 件 |
 | データ最終更新 | 2026-08-17 |
 
@@ -88,13 +88,16 @@ Topology と Occupancy Forecasting が少ないのは、キーワード辞書が
   常用するなら `S2_API_KEY` が要る。既定ソースからは外してある。
 - **Code URL は best effort**。abstract / arXiv コメント / CVF ページ中の GitHub リンクを
   拾っているだけで、Papers with Code 連携は入れていない (API が不安定なため)。現状 234 件中 48 件。
-- **要約が 15/234 件**。残りは課金が発生するためローカルで順次実行する想定。
+- **要約が 35/234 件**。残りは課金が発生するためローカルで順次実行する想定。
+- **要約対象の選び方が偏る**。`--max-summaries` は関連度スコアの高い順に選ぶため、
+  スコアが出やすい Occupancy 系に集中する (35 件中 28 件)。
+  トピックを散らしたい場合はラウンドロビンで選ぶようにするか、トピック別に実行する必要がある。
 - GitHub の仕様上、リポジトリが 60 日間無活動だとスケジュール実行が自動停止する。
   週次で新着コミットが入るうちは問題にならない。
 
 ## 次にやるとしたら
 
-- 残り 219 件の日本語要約 (`summarize --max-summaries 50 --model claude-sonnet-5` で小分け)
+- 残り 199 件の日本語要約 (`summarize --max-summaries 50 --model claude-sonnet-5` で小分け)
 - Topology / Occupancy Forecasting のキーワード辞書の拡充
 - Papers with Code もしくは GitHub 検索による Code URL の補完
 - 一次フィルタの閾値 (現状 4.0) の調整 — 現状 240 件中 237 件が通過しており、ほぼ素通し状態
