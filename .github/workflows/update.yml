@@ -1,0 +1,57 @@
+name: update-digest
+
+# 新着論文の収集と HTML 再生成だけを自動化する。
+# 日本語要約は API キーが要るのでローカルで `paper-digest summarize` を回す運用。
+on:
+  schedule:
+    - cron: "0 0 * * 1"   # 毎週月曜 00:00 UTC (= 09:00 JST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-digest
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: 差分検出用に現状を退避
+        run: jq -S '.papers' papers.json > /tmp/before.json
+
+      - name: 新着論文を収集して出力を再生成
+        run: |
+          uv run paper-digest update --no-llm \
+            --data papers.json \
+            --output papers.md \
+            --output docs/index.html \
+            --limit 150 \
+            --cvf-detail-limit 30
+
+      - name: 新着があればコミットする
+        run: |
+          jq -S '.papers' papers.json > /tmp/after.json
+          if diff -q /tmp/before.json /tmp/after.json > /dev/null; then
+            echo "新着なし (生成時刻だけの差分は捨てる)"
+            git checkout -- .
+            exit 0
+          fi
+          added=$(( $(jq 'length' /tmp/after.json) - $(jq 'length' /tmp/before.json) ))
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add papers.json papers.md docs/index.html
+          git commit -m "chore: 新着論文を追加 (+${added}件, $(date -u +%Y-%m-%d))"
+          git push
+
+      - name: 未要約の件数を表示
+        run: |
+          pending=$(jq '[.papers[] | select(.summary_ja == "" and .llm_relevant != false)] | length' papers.json)
+          echo "::notice::日本語要約が未生成の論文: ${pending} 件 (ローカルで \`uv run paper-digest summarize\` を実行してください)"
