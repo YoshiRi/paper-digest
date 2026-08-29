@@ -1,16 +1,16 @@
 # 論文ダイジェスト
 
-生成日時: 2026-08-17 22:42 / 収録 234 件
+生成日時: 2026-08-30 08:27 / 収録 237 件
 
 ## トピック
 
 - [Occupancy](#occupancy) — 62 件
-- [Gaussian Splatting](#gaussian-splatting) — 36 件
+- [Gaussian Splatting](#gaussian-splatting) — 37 件
 - [HD Map](#hd-map) — 35 件
 - [AD Perception](#ad-perception) — 33 件
 - [3D Detection](#3d-detection) — 25 件
-- [Open-world](#open-world) — 10 件
-- [Reconstruction](#reconstruction) — 10 件
+- [Open-world](#open-world) — 11 件
+- [Reconstruction](#reconstruction) — 11 件
 - [Scene Understanding](#scene-understanding) — 9 件
 - [World Model](#world-model) — 9 件
 - [Topology](#topology) — 3 件
@@ -857,6 +857,15 @@ ICCV 2025 / Occupancy
 - Code: https://github.com/happyw1nd/ScoreLiDAR
 
 ## Gaussian Splatting
+
+### Per-View Gaussian Predictions Enable Training-Free Distractor Filtering in Feed-Forward 3DGS
+
+arXiv 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2608.26951
+- Code: -
 
 ### HumanoidVLN: A Physics-Grounded Simulator and Benchmark for Vision-Language Navigation Across Diverse Humanoid Embodiments
 
@@ -2122,6 +2131,15 @@ CVPR 2026 / Open-world
 - Paper: https://arxiv.org/abs/2507.22052
 - Code: -
 
+### Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation
+
+CVPR 2026 / Open-world
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2604.23604
+- Code: -
+
 ### OpenM3D: Open Vocabulary Multi-view Indoor 3D Object Detection without Human Annotations
 
 ICCV 2025 / Open-world
@@ -2168,6 +2186,15 @@ CVPR 2025 / Open-world
 - Code: -
 
 ## Reconstruction
+
+### Stream4D: 4D-Consistency for Streaming Autoregressive Diffusion Video Models
+
+arXiv 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2608.19556
+- Code: -
 
 ### RoadVGGT: Road-Structure-Aware Feed-Forward Road Surface Reconstruction
 
