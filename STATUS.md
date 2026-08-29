@@ -1,6 +1,6 @@
 # 開発・運用ステータス
 
-2026-08-17 時点。PoC として作ったところから、GitHub Pages で公開して
+2026-08-30 時点。PoC として作ったところから、GitHub Pages で公開して
 週次で自動更新が回るところまでの記録。
 
 ## 現状
@@ -10,20 +10,20 @@
 | リポジトリ | https://github.com/YoshiRi/paper-digest (public) |
 | 公開ページ | https://yoshiri.github.io/paper-digest/ |
 | Pages ソース | `main` ブランチの `/docs` (`docs/index.html`) |
-| 収録論文 | 234 件 (arXiv 145 / CVF 89) |
-| 日本語要約済み | 35 件 (残り 199 件は未生成) |
+| 収録論文 | 237 件 (arXiv 147 / CVF 90) |
+| 日本語要約済み | 35 件 (残り 202 件は未生成) |
 | Code URL 取得済み | 48 件 |
-| データ最終更新 | 2026-08-17 |
+| データ最終更新 | 2026-08-30 |
 
 ### 収録内訳
 
-発表先: arXiv 2026 (60) / arXiv 2025 (57) / CVPR 2026 (32) / ICCV 2025 (32) /
+発表先: arXiv 2026 (62) / arXiv 2025 (57) / CVPR 2026 (33) / ICCV 2025 (32) /
 CVPR 2025 (31) / ECCV 2026 (5) / IROS 2026 (4) / ICRA 2026 (4) ほか
-(年別: 2025 が 131 件、2026 が 103 件)
+(年別: 2025 が 131 件、2026 が 106 件)
 
-トピック: Occupancy (62) / Gaussian Splatting (36) / HD Map (35) /
-AD Perception (32) / 3D Detection (25) / Reconstruction (11) / Open-world (10) /
-Scene Understanding (9) / World Model (8) / Topology (3) / Occupancy Forecasting (3)
+トピック: Occupancy (62) / Gaussian Splatting (37) / HD Map (35) /
+AD Perception (33) / 3D Detection (25) / Reconstruction (11) / Open-world (11) /
+Scene Understanding (9) / World Model (9) / Topology (3) / Occupancy Forecasting (2)
 
 Topology と Occupancy Forecasting が少ないのは、キーワード辞書がまだ薄いのが原因と思われる。
 `paper_digest/topics.py` の `strong` / `queries` を足すと拾えるようになるはず。
@@ -87,8 +87,8 @@ Topology と Occupancy Forecasting が少ないのは、キーワード辞書が
 - **Semantic Scholar は未認証だとレート制限が厳しい**。失敗しても他ソースは続行するが、
   常用するなら `S2_API_KEY` が要る。既定ソースからは外してある。
 - **Code URL は best effort**。abstract / arXiv コメント / CVF ページ中の GitHub リンクを
-  拾っているだけで、Papers with Code 連携は入れていない (API が不安定なため)。現状 234 件中 48 件。
-- **要約が 35/234 件**。残りは課金が発生するためローカルで順次実行する想定。
+  拾っているだけで、Papers with Code 連携は入れていない (API が不安定なため)。現状 237 件中 48 件。
+- **要約が 35/237 件**。残りは課金が発生するためローカルで順次実行する想定。
 - **要約対象の選び方が偏る**。`--max-summaries` は関連度スコアの高い順に選ぶため、
   スコアが出やすい Occupancy 系に集中する (35 件中 28 件)。
   トピックを散らしたい場合はラウンドロビンで選ぶようにするか、トピック別に実行する必要がある。
@@ -97,7 +97,7 @@ Topology と Occupancy Forecasting が少ないのは、キーワード辞書が
 
 ## 次にやるとしたら
 
-- 残り 199 件の日本語要約 (`summarize --max-summaries 50 --model claude-sonnet-5` で小分け)
+- 残り 202 件の日本語要約 (`summarize --max-summaries 50 --model claude-sonnet-5` で小分け)
 - Topology / Occupancy Forecasting のキーワード辞書の拡充
 - Papers with Code もしくは GitHub 検索による Code URL の補完
 - 一次フィルタの閾値 (現状 4.0) の調整 — 現状 240 件中 237 件が通過しており、ほぼ素通し状態
