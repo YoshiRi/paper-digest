@@ -107,8 +107,16 @@ CVPR 2026 / Mapping
 ```
 
 HTML は外部依存なしの1ファイルで、キーワード検索・Conference フィルタ・
-Topic フィルタ・並び替え (新しい順 / 古い順 / 関連度順 / タイトル順) ができます。
+Topic フィルタ・並び替え (新しい順 / 古い順 / 関連度順 / マーク優先 / タイトル順) ができます。
 ライト/ダークテーマに追従します。
+
+ブラウザの `localStorage` を使って、論文ごとに `お気に入り` / `あとで読む` /
+`読んでる` / `読んだ` / `見送り`、memo、questions も保存できます。
+状態は端末ローカルなので、別端末へ移す場合はページ上の Export / Import を使います。
+
+Ask パネルは現在の検索・フィルタ結果から LLM に渡す prompt を生成します。
+Survey パネルは追加調査したい query を request JSON として保存します。
+backend/API 化の方針は [INTERACTIVE_PLAN.md](INTERACTIVE_PLAN.md) にまとめています。
 
 ### 中間形式 (papers.json)
 
