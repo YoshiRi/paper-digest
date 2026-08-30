@@ -6,6 +6,44 @@ on:
   schedule:
     - cron: "0 0 * * 1"   # 毎週月曜 00:00 UTC (= 09:00 JST)
   workflow_dispatch:
+    inputs:
+      query:
+        description: "追加サーベイ query。カンマ区切り可。空なら既存設定/既定テーマを使う"
+        required: false
+        type: string
+      since:
+        description: "対象年の下限。空なら既存設定/既定値を使う"
+        required: false
+        type: string
+      sources:
+        description: "検索ソース"
+        required: false
+        default: "arxiv,cvf"
+        type: choice
+        options:
+          - arxiv,cvf
+          - arxiv
+          - cvf
+          - arxiv,cvf,semanticscholar
+      venues:
+        description: "CVF / Semantic Scholar の対象会議"
+        required: false
+        default: "CVPR,ICCV,ECCV"
+        type: string
+      limit:
+        description: "1ソースあたりの取得上限"
+        required: false
+        default: "150"
+        type: string
+      min_score:
+        description: "キーワード一次フィルタ閾値。空なら既存設定/既定値を使う"
+        required: false
+        type: string
+      cvf_detail_limit:
+        description: "CVF で abstract を取りに行く最大件数 / 会議・年"
+        required: false
+        default: "30"
+        type: string
 
 permissions:
   contents: write
@@ -28,13 +66,44 @@ jobs:
         run: jq -S '.papers' papers.json > /tmp/before.json
 
       - name: 新着論文を収集して出力を再生成
+        env:
+          SURVEY_QUERY: ${{ inputs.query || '' }}
+          SURVEY_SINCE: ${{ inputs.since || '' }}
+          SURVEY_SOURCES: ${{ inputs.sources || '' }}
+          SURVEY_VENUES: ${{ inputs.venues || '' }}
+          SURVEY_LIMIT: ${{ inputs.limit || '150' }}
+          SURVEY_MIN_SCORE: ${{ inputs.min_score || '' }}
+          SURVEY_CVF_DETAIL_LIMIT: ${{ inputs.cvf_detail_limit || '30' }}
         run: |
-          uv run paper-digest update --no-llm \
+          jq '.config // {}' papers.json > /tmp/before-config.json
+
+          cmd=(uv run paper-digest update --no-llm \
             --data papers.json \
             --output papers.md \
             --output docs/index.html \
-            --limit 150 \
-            --cvf-detail-limit 30
+            --limit "${SURVEY_LIMIT}" \
+            --cvf-detail-limit "${SURVEY_CVF_DETAIL_LIMIT}")
+
+          if [ -n "${SURVEY_QUERY}" ]; then
+            cmd+=(--query "${SURVEY_QUERY}")
+          fi
+          if [ -n "${SURVEY_SINCE}" ]; then
+            cmd+=(--since "${SURVEY_SINCE}")
+          fi
+          if [ -n "${SURVEY_SOURCES}" ]; then
+            cmd+=(--sources "${SURVEY_SOURCES}")
+          fi
+          if [ -n "${SURVEY_VENUES}" ]; then
+            cmd+=(--venues "${SURVEY_VENUES}")
+          fi
+          if [ -n "${SURVEY_MIN_SCORE}" ]; then
+            cmd+=(--min-score "${SURVEY_MIN_SCORE}")
+          fi
+
+          "${cmd[@]}"
+          jq --slurpfile config /tmp/before-config.json '.config = $config[0]' papers.json > /tmp/papers.json
+          mv /tmp/papers.json papers.json
+          uv run paper-digest render --data papers.json --output papers.md --output docs/index.html
 
       - name: 新着があればコミットする
         run: |

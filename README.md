@@ -116,6 +116,7 @@ Topic フィルタ・並び替え (新しい順 / 古い順 / 関連度順 / マ
 
 Ask パネルは現在の検索・フィルタ結果から LLM に渡す prompt を生成します。
 Survey パネルは追加調査したい query を request JSON として保存します。
+保存した request は Actions タブの **update-digest** → Run workflow の入力に対応します。
 backend/API 化の方針は [INTERACTIVE_PLAN.md](INTERACTIVE_PLAN.md) にまとめています。
 
 ### 中間形式 (papers.json)
@@ -172,6 +173,9 @@ backend/API 化の方針は [INTERACTIVE_PLAN.md](INTERACTIVE_PLAN.md) にまと
 Actions は新着が無ければコミットしません (生成時刻だけの差分は捨てます)。
 `main` に push されると Pages (`main` ブランチの `/docs`) が自動で再デプロイされます。
 手動実行は Actions タブの **update-digest** → Run workflow から。
+Run workflow では `query` / `since` / `sources` / `venues` / `limit` /
+`min_score` / `cvf_detail_limit` を指定できます。単発の追加サーベイで指定した条件は
+実行後に `papers.json.config` へ残さないため、通常の定期更新条件は変わりません。
 
 ローカルでの要約 → 公開までの流れ:
 

@@ -20,6 +20,7 @@ GitHub Pages のまま完結させる。
 - export/import JSON で、端末間の手動移行とバックアップを可能にする。
 - Ask は回答までは行わず、現在の検索・フィルタ結果から LLM 用 prompt を生成する。
 - Survey は実行せず、query / since / sources / limit を request JSON として queue する。
+- request JSON は GitHub Actions `update-digest` の `workflow_dispatch` 入力に対応させる。
 
 この段階は認証も backend も不要。公開ページとして壊れにくい。
 
@@ -79,6 +80,9 @@ POST /ask
 ## Phase 4: Survey API
 
 追加サーベイは同期処理にしない。外部 API と LLM 要約で時間がかかるため job にする。
+
+API を持つ前の橋渡しとして、GitHub Actions の手動実行で query を受け取れるようにする。
+単発サーベイ条件は `papers.json.config` に残さず、通常の定期更新条件を変えない。
 
 最小 endpoint:
 

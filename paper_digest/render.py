@@ -102,7 +102,7 @@ header { position:sticky; top:0; z-index:10; background:var(--bg);
 h1 { margin:0 0 2px; font-size:19px; }
 .meta { color:var(--muted); font-size:12px; margin-bottom:10px; }
 .controls { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-input[type=search], input[type=number], select, textarea {
+input[type=search], input[type=number], input[type=text], select, textarea {
   font:inherit; font-size:13px; padding:7px 10px; border:1px solid var(--line);
   border-radius:8px; background:var(--card); color:var(--fg); }
 input[type=search] { flex:1 1 260px; min-width:200px; }
@@ -229,6 +229,9 @@ details.abs summary { cursor:pointer; font-size:12px; }
           <option value="cvf">cvf</option>
           <option value="arxiv,cvf,semanticscholar">arxiv,cvf,semanticscholar</option>
         </select>
+      </div>
+      <div class="panel-row">
+        <input type="text" id="surveyVenues" value="CVPR,ICCV,ECCV" title="venues">
       </div>
       <div class="panel-actions">
         <button id="saveSurvey">Queue</button>
@@ -446,7 +449,7 @@ function renderSurveys() {
   $("surveyList").innerHTML = surveyRequests.slice(0, 8).map((r, i) => `
     <div class="survey-item">
       <b>${esc(r.query)}</b>
-      <span>since ${esc(String(r.since))} / ${esc(r.sources)} / limit ${esc(String(r.limit))} / ${esc(r.created_at)}</span>
+      <span>since ${esc(String(r.since))} / ${esc(r.sources)} / ${esc(r.venues || "CVPR,ICCV,ECCV")} / limit ${esc(String(r.limit))} / ${esc(r.created_at)}</span>
       <div class="panel-actions"><button data-survey-copy="${i}">Copy JSON</button></div>
     </div>
   `).join("");
@@ -460,6 +463,7 @@ function saveSurvey() {
     since: Number($("surveySince").value || 2025),
     limit: Number($("surveyLimit").value || 150),
     sources: $("surveySources").value,
+    venues: $("surveyVenues").value.trim() || "CVPR,ICCV,ECCV",
     created_at: new Date().toISOString(),
     status: "queued",
   });
