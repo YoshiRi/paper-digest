@@ -1,12 +1,12 @@
 # 論文ダイジェスト
 
-生成日時: 2026-08-30 08:27 / 収録 237 件
+生成日時: 2026-09-07 03:39 / 収録 239 件
 
 ## トピック
 
 - [Occupancy](#occupancy) — 62 件
-- [Gaussian Splatting](#gaussian-splatting) — 37 件
-- [HD Map](#hd-map) — 35 件
+- [Gaussian Splatting](#gaussian-splatting) — 38 件
+- [HD Map](#hd-map) — 36 件
 - [AD Perception](#ad-perception) — 33 件
 - [3D Detection](#3d-detection) — 25 件
 - [Open-world](#open-world) — 11 件
@@ -858,6 +858,15 @@ ICCV 2025 / Occupancy
 
 ## Gaussian Splatting
 
+### NavArena: Automated Construction of Goal-Oriented Navigation Benchmarks from 3D Gaussian Splatting Reconstructions
+
+arXiv 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.04602
+- Code: -
+
 ### Per-View Gaussian Predictions Enable Training-Free Distractor Filtering in Feed-Forward 3DGS
 
 arXiv 2026 / Gaussian Splatting
@@ -1340,6 +1349,15 @@ arXiv 2026 / HD Map
 - Paper: https://arxiv.org/abs/2603.03452
 - Code: -
 
+### FlexMap: Robust HD Map Construction under Flexible Camera Configurations
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2601.22376
+- Code: -
+
 ### SatMap: Revisiting Satellite Maps as Prior for Online HD Map Construction
 
 arXiv 2026 / HD Map
@@ -1542,7 +1560,7 @@ CVPR 2025 / HD Map
 
 ### Geometry-Grounded Unified 3D Perception for Autonomous Driving
 
-arXiv 2026 / AD Perception
+BMVC 2026 / AD Perception
 
 **概要**
 

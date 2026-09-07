@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-29T23:27:47+00:00",
+  "updated_at": "2026-09-07T03:39:06+00:00",
   "config": {
     "query": [],
     "since": 2025,
@@ -29,7 +29,7 @@
       "abstract": "Camera-based autonomous driving perception requires a shared representation that preserves metric 3D structure across synchronized multi-camera streams. However, existing image-based frameworks often rely on backbones pretrained for semantic recognition, and introduce 3D geometry through downstream task-specific modules. As a result, their shared representations may fail to preserve explicit metric geometry and consistent 3D scene structure. In this paper, we present a Geometry-grounded Unified 3D Perception (GeoUP) framework that adapts the reconstruction-oriented latent of VGGT to calibrated, streaming multi-camera driving scenes. GeoUP factorizes cross-image interaction into self, temporal, and view attention to capture structurally distinct temporal and cross-view correspondences. It further injects calibration-aware raymap encodings to provide metric scale and camera geometry. The resulting geometry-grounded latent is decoded for metric depth estimation, 3D object detection, and semantic occupancy prediction, corresponding to surface-, instance-, and volume-level readouts of the same 3D scene. Through joint multi-task and multi-dataset training, GeoUP effectively leverages heterogeneous annotations and generalizes across diverse sensor configurations and perception ranges. Extensive experiments on nuScenes, Argoverse 2, Waymo, KITTI, and DDAD demonstrate that GeoUP achieves SOTA performance across detection, occupancy, and depth estimation. These results validate the effectiveness of geometry-grounded representations for unified 3D driving perception.",
       "paper_url": "https://arxiv.org/abs/2608.13147",
       "code_url": "",
-      "venue": "arXiv 2026",
+      "venue": "BMVC 2026",
       "year": 2026,
       "topic": "AD Perception",
       "topics": [
@@ -6761,6 +6761,72 @@
       "llm_relevant": null,
       "llm_reason": "",
       "added_at": "2026-08-29T23:27:47+00:00"
+    },
+    {
+      "title": "NavArena: Automated Construction of Goal-Oriented Navigation Benchmarks from 3D Gaussian Splatting Reconstructions",
+      "abstract": "Fixed 3D Gaussian Splatting (3DGS) reconstructions provide realistic novel views but lack the traversability constraints, valid goals, and closed-loop protocols required for navigation evaluation. We introduce NavArena, an automated framework that transforms fixed 3DGS reconstructions into benchmarks for goal-oriented visual navigation. NavArena integrates a frozen 3DGS model for egocentric RGB-D rendering, an occupancy costmap derived from Gaussian density and height statistics for reachability and collision queries, and semantic goal candidates lifted from multi-view open-vocabulary masks. These components support the automatic generation and unified closed-loop evaluation of goal-oriented navigation episodes. Across more than 2{,}000 scenes, NavArena generates 22.2 million expert trajectories. Spatial and semantic evaluations assess the derived navigation representations, while policy rollouts demonstrate the diagnostic value of the unified evaluation protocol. NavArena enables scalable and reproducible navigation evaluation on large-scale 3DGS reconstructions, and all benchmark-generation tools, evaluation protocols, and derived assets will be released publicly.",
+      "paper_url": "https://arxiv.org/abs/2609.04602",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Gaussian Splatting",
+      "topics": [
+        "Gaussian Splatting",
+        "Open-world",
+        "Occupancy"
+      ],
+      "authors": [
+        "Junhui Wang",
+        "Wei Yang",
+        "Xinyao Li",
+        "Ningjing Fan",
+        "Yuehao Yin",
+        "Xuecheng Chen",
+        "Chao Gao"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-04T01:02:03Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 13.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-09-07T03:39:06+00:00"
+    },
+    {
+      "title": "FlexMap: Robust HD Map Construction under Flexible Camera Configurations",
+      "abstract": "High-definition (HD) maps provide essential semantic information about road structures for autonomous driving, but existing HD map construction methods typically require calibrated multi-camera rigs and explicit 2D-to-BEV transformations. Such pipelines degrade when camera views are missing or pose estimates are inaccurate, limiting their use across heterogeneous fleet configurations. We introduce FlexMap, a vectorized HD mapping framework that adapts to varying camera configurations without architectural changes or per-configuration retraining and does not require camera parameters as model input. FlexMap replaces explicit geometric projection with a geometry foundation model that encodes cross-view 3D structure. A spatial-temporal enhancement module then separates cross-view spatial reasoning from temporal aggregation, while a camera-aware decoder uses the token produced for each input view to adapt its attention without camera poses. Experiments on nuScenes and Argoverse 2 show that FlexMap outperforms pose-dependent baselines using estimated poses and maintains comparable accuracy across all evaluated camera configurations, including those with missing views.",
+      "paper_url": "https://arxiv.org/abs/2601.22376",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "HD Map",
+      "topics": [
+        "HD Map",
+        "AD Perception",
+        "3D Detection",
+        "Open-world"
+      ],
+      "authors": [
+        "Run Wang",
+        "Chaoyi Zhou",
+        "Amir Salarpour",
+        "Xi Liu",
+        "Zhi-Qi Cheng",
+        "Feng Luo",
+        "Mert D. Pesé",
+        "Siyu Huang"
+      ],
+      "source": "arxiv",
+      "published": "2026-01-29T22:41:11Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 18.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-09-07T03:39:06+00:00"
     }
   ]
 }
