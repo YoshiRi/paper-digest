@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-09-07T03:39:06+00:00",
+  "updated_at": "2026-09-21T04:03:01+00:00",
   "config": {
     "query": [],
     "since": 2025,
@@ -5997,7 +5997,8 @@
       "topic": "HD Map",
       "topics": [
         "HD Map",
-        "AD Perception"
+        "AD Perception",
+        "3D Detection"
       ],
       "authors": [
         "Nan Peng",
@@ -6011,7 +6012,7 @@
       "summary_ja": "",
       "novelty_ja": "",
       "why_read_ja": "",
-      "relevance": 14.5,
+      "relevance": 16.5,
       "llm_relevant": null,
       "llm_reason": "",
       "added_at": "2026-08-17T10:51:33+00:00"
@@ -6827,6 +6828,163 @@
       "llm_relevant": null,
       "llm_reason": "",
       "added_at": "2026-09-07T03:39:06+00:00"
+    },
+    {
+      "title": "Accuracy- and Real-Time-Aware 4D Radar Preprocessing for Autonomous Driving Perception Systems",
+      "abstract": "4D radar has emerged as a promising next-generation sensor for improving the robustness of autonomous driving perception systems because of its stable sensing capability under adverse weather conditions. However, deploying 4D radar in embedded environments with limited hardware resources requires radar-representation preprocessing that jointly considers perception accuracy, real-time performance, and computational complexity. This paper proposes a preprocessing framework for 4D-radar-based 3D object detection. First, Percentile-based 3D Shape Preservation (P3DP) extracts point clouds from radar tensors while preserving object-shape information and suppressing noise and false alarms. Second, Multi-frame-based Noise Point Discrimination using Kernel Density Estimation (MF-KDE) improves the density and reliability of sparse radar point clouds. Finally, Embedded \\& NetScore (ENS) evaluates suitability for embedded deployment by jointly considering accuracy, real-time performance, adverse-weather robustness, and model complexity.",
+      "paper_url": "https://arxiv.org/abs/2609.18542",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "AD Perception",
+      "topics": [
+        "AD Perception",
+        "3D Detection"
+      ],
+      "authors": [
+        "Woo-Jin Jung",
+        "Dong-Hee Paek",
+        "Jeong-Su Park",
+        "Seung-Hyun Kong"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-16T12:06:22Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 13.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-09-21T04:03:01+00:00"
+    },
+    {
+      "title": "Learning from Distributed Eyes: Leveraging Collaborative Perception for Automated Model Adaptation",
+      "abstract": "In autonomous driving, perception models often struggle to generalize to new environments due to domain shifts. While unsupervised model adaptation offers a feasible solution without labor-intensive manual labeling, existing methods that rely solely on the ego-vehicle's data often lead to inferior pseudo-labeling performance. To address this critical issue, we propose LDE, Learning from Distributed ``Eyes\", a novel framework that transforms collaborative perception (CP) into a source of high-quality supervision for model adaptation. This pseudo-labeling approach is hyperparameter-insensitive and relatively reliable, assuming CP often outperforms single-agent's perception. However, naively implementing this approach encounters (1) the communication bottleneck of sharing rich features under time and bandwidth constraints, (2) the view discrepancy between the CP view and the learner's Field of View (FoV), and (3) the unreliability even in CP-generated labels. To address these issues, we design an adaptation-oriented feature sharing mechanism that selectively transmits the most critical information for adaptation, an FoV filtering method that meticulously eliminates mismatched labels, and a curriculum learning strategy to progressively exploit pseudo labels. Extensive experiments on 3D object detection tasks demonstrate that LDE consistently outperforms both the pre-trained models and state-of-the-art unsupervised adaptation methods.",
+      "paper_url": "https://arxiv.org/abs/2609.18511",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "3D Detection",
+      "topics": [
+        "3D Detection",
+        "AD Perception"
+      ],
+      "authors": [
+        "Yanan Ma",
+        "Yihang Tao",
+        "Zhengru Fang",
+        "Zihan Fang",
+        "Yiqin Deng",
+        "Xianhao Chen",
+        "Yuguang Fang"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-16T11:44:26Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 8.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-09-21T04:03:01+00:00"
+    },
+    {
+      "title": "NeuroSymbEAD: A Large Scale Neuro-Symbolic Caption Dataset for Omni-Directional Embodied Autonomous Driving",
+      "abstract": "This paper introduces NeuroSymbEAD, a large-scale neuro-symbolic caption dataset featuring an ego-centric knowledge graph (KG) of static and dynamic objects annotated with classes, categories, heading directions, orientations, and distances from the ego-vehicle. These annotations are used on the KITTI-360 dataset to generate multilevel textual captions representing a lightweight version of an ego-centric scene map. Outdoor scene-map reconstruction, visual recognition, and object grounding establish baselines for driving common sense and traffic/scene understanding. For these purposes, natural language-based grounded captioning of objects and their complex relationships is a widely adopted contextual representation for indoor scene tasks. Neuro-symbolic representations have proven effective in handling structured information for various computer vision and language applications. Our data annotation pipeline allows the generation of varied map segments, populating simulated or real objects within the bounding boxes predicted by any 3D object detection network, and building hierarchical text captions. We benchmark our neuro-symbolic and ontological caption generation using pre-trained grounding and learned auto-regressive captioning networks. By converting 3D driving scenes into structured ego-centric language, NeuroSymbEAD provides a benchmark for vision-language and foundation models for traffic-scene explanation, 3D reasoning, and interpretable autonomous-driving perception.",
+      "paper_url": "https://arxiv.org/abs/2609.16919",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "3D Detection",
+      "topics": [
+        "3D Detection",
+        "Map Update",
+        "Open-world",
+        "AD Perception"
+      ],
+      "authors": [
+        "Muhammad Ahmed Ullah Khan",
+        "Mohammed Elamine",
+        "Sheikh Talha Uddin",
+        "Didier Stricker",
+        "Sk Aziz Ali",
+        "Muhammad Zeshan Afzal"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-15T09:52:51Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 13.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-09-21T04:03:01+00:00"
+    },
+    {
+      "title": "The Neverwhere Visual Parkour Benchmark Suite",
+      "abstract": "State-of-the-art visual locomotion controllers are increasingly capable at handling complex visual environments, making evaluating their real-world performance before deployment increasingly difficult. This work intends to narrow this train/evaluation gap by developing a collection of hyper-photo-realistic, closed-loop evaluation environments - The Neverwhere Benchmark Suite - comprised of over sixty 3D Gaussian Splatting reconstructions of urban indoor and outdoor scenes. Our goal is to encourage large-scale and reproducible robot evaluation by making it easier to create and integrate Gaussian splats-based reconstructions into simulated continuous testing setups. We also underscore the potential pitfalls of relying exclusively on 3D Gaussian-generated data for training, by providing policy checkpoints trained over multiple Neverwhere scenes and their performance when evaluated in novel scenes. Our analysis illustrates the necessity of sourcing diverse data to ensure performance. Code and data are available on the project page: https://ziyc.github.io/neverwhere-bench/.",
+      "paper_url": "https://arxiv.org/abs/2609.16443",
+      "code_url": "",
+      "venue": "IROS 2026",
+      "year": 2026,
+      "topic": "Gaussian Splatting",
+      "topics": [
+        "Gaussian Splatting"
+      ],
+      "authors": [
+        "Ziyu Chen",
+        "Henghui Bao",
+        "Haoran Chang",
+        "Alan Yu",
+        "Ran Choi",
+        "Kai McClennen",
+        "Gio Huh",
+        "Kevin Yang",
+        "Ri-Zhao Qiu",
+        "Yajvan Ravan",
+        "John J. Leonard",
+        "Xiaolong Wang",
+        "Phillip Isola",
+        "Ge Yang",
+        "Yue Wang"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-14T23:50:08Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 6.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-09-21T04:03:01+00:00"
+    },
+    {
+      "title": "Bi-Level Routing and Sparse Spatial Attention based Multi-View BEV 3D Object Detection for Autonomous Driving",
+      "abstract": "Bird's Eye View (BEV)-based multi-view 3D object detection suffers from challenges of computational complexity, multi-scale feature extraction, and efficiency of dense 2D-to-BEV view transformation. To address these problems, this paper proposes an improved BEV 3D object detection algorithm Sparse-BEVNet. Firstly, a Bi-Level Routing Attention (BRA) mechanism is introduced into the image feature extraction network to reduce the computational burden of the backbone. Second, Cascaded Group Attention (CGA) is employed in the feature fusion module, which enhances deep interaction across features of different hierarchical levels without introducing additional computational overhead. Furthermore, a Sparse Spatial Cross-Attention mechanism is adopted to replace the conventional dense view projection pipeline. Experimental results on the public nuScenes dataset demonstrate that the proposed method achieves a mean Average Precision (mAP) of 45.2% and a nuScenes Detection Score (NDS) of 54.5%, corresponding to 3.6% and 2.8% improvements relative to the baseline model, respectively.",
+      "paper_url": "https://arxiv.org/abs/2609.14185",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "3D Detection",
+      "topics": [
+        "3D Detection",
+        "AD Perception",
+        "HD Map"
+      ],
+      "authors": [
+        "Jing Zhang",
+        "Jiaqi Liu",
+        "Zibo Wang"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-12T23:35:28Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 16.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-09-21T04:03:01+00:00"
     }
   ]
 }

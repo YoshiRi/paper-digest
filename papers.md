@@ -1,14 +1,14 @@
 # 論文ダイジェスト
 
-生成日時: 2026-09-07 03:39 / 収録 239 件
+生成日時: 2026-09-21 04:03 / 収録 244 件
 
 ## トピック
 
 - [Occupancy](#occupancy) — 62 件
-- [Gaussian Splatting](#gaussian-splatting) — 38 件
+- [Gaussian Splatting](#gaussian-splatting) — 39 件
 - [HD Map](#hd-map) — 36 件
-- [AD Perception](#ad-perception) — 33 件
-- [3D Detection](#3d-detection) — 25 件
+- [AD Perception](#ad-perception) — 34 件
+- [3D Detection](#3d-detection) — 28 件
 - [Open-world](#open-world) — 11 件
 - [Reconstruction](#reconstruction) — 11 件
 - [Scene Understanding](#scene-understanding) — 9 件
@@ -858,6 +858,15 @@ ICCV 2025 / Occupancy
 
 ## Gaussian Splatting
 
+### The Neverwhere Visual Parkour Benchmark Suite
+
+IROS 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.16443
+- Code: -
+
 ### NavArena: Automated Construction of Goal-Oriented Navigation Benchmarks from 3D Gaussian Splatting Reconstructions
 
 arXiv 2026 / Gaussian Splatting
@@ -1558,6 +1567,15 @@ CVPR 2025 / HD Map
 
 ## AD Perception
 
+### Accuracy- and Real-Time-Aware 4D Radar Preprocessing for Autonomous Driving Perception Systems
+
+arXiv 2026 / AD Perception
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.18542
+- Code: -
+
 ### Geometry-Grounded Unified 3D Perception for Autonomous Driving
 
 BMVC 2026 / AD Perception
@@ -1876,6 +1894,33 @@ ICCV 2025 / AD Perception
 - Code: https://github.com/liyingyanUCAS/WoTE
 
 ## 3D Detection
+
+### Learning from Distributed Eyes: Leveraging Collaborative Perception for Automated Model Adaptation
+
+arXiv 2026 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.18511
+- Code: -
+
+### NeuroSymbEAD: A Large Scale Neuro-Symbolic Caption Dataset for Omni-Directional Embodied Autonomous Driving
+
+arXiv 2026 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.16919
+- Code: -
+
+### Bi-Level Routing and Sparse Spatial Attention based Multi-View BEV 3D Object Detection for Autonomous Driving
+
+arXiv 2026 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.14185
+- Code: -
 
 ### NCGR: Noise-Conditional Gated Rectification for Camera Extrinsic Perturbations in BEV 3D Object Detection
 
