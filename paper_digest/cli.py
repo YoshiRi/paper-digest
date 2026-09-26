@@ -98,6 +98,31 @@ def _collect_from_sources(cfg: dict) -> list[Paper]:
     return found
 
 
+def _select_pending(pending: list[Paper], limit: int) -> list[Paper]:
+    """topic ごとに関連度降順へ揃えたうえで round-robin に選び、偏りを防ぐ。"""
+    groups: dict[str, list[Paper]] = {}
+    for p in pending:
+        groups.setdefault(p.topic or "Other", []).append(p)
+    for g in groups.values():
+        g.sort(key=lambda p: -p.relevance)
+    order = sorted(groups.keys())
+    selected: list[Paper] = []
+    idx = 0
+    while len(selected) < limit:
+        added_any = False
+        for topic in order:
+            g = groups[topic]
+            if idx < len(g):
+                selected.append(g[idx])
+                added_any = True
+                if len(selected) >= limit:
+                    break
+        if not added_any:
+            break
+        idx += 1
+    return selected
+
+
 def _run_summaries(args: argparse.Namespace, store: Store, cfg: dict) -> None:
     if getattr(args, "no_llm", False):
         log.info("--no-llm のため日本語要約はスキップします")
@@ -108,7 +133,7 @@ def _run_summaries(args: argparse.Namespace, store: Store, cfg: dict) -> None:
         return
     limit = getattr(args, "max_summaries", None)
     if limit:
-        pending = sorted(pending, key=lambda p: -p.relevance)[: int(limit)]
+        pending = _select_pending(pending, int(limit))
     log.info("日本語要約を生成します: %d 件", len(pending))
     try:
         backend = make_backend(getattr(args, "llm_backend", "auto"), cfg["model"],
