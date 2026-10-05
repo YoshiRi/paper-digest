@@ -1,14 +1,14 @@
 # 論文ダイジェスト
 
-生成日時: 2026-09-26 13:51 / 収録 184 件
+生成日時: 2026-10-05 04:46 / 収録 189 件
 
 ## トピック
 
 - [Occupancy](#occupancy) — 55 件
-- [HD Map](#hd-map) — 36 件
+- [HD Map](#hd-map) — 39 件
 - [3D Detection](#3d-detection) — 29 件
-- [AD Perception](#ad-perception) — 20 件
-- [Gaussian Splatting](#gaussian-splatting) — 14 件
+- [AD Perception](#ad-perception) — 21 件
+- [Gaussian Splatting](#gaussian-splatting) — 15 件
 - [World Model](#world-model) — 11 件
 - [Scene Understanding](#scene-understanding) — 5 件
 - [Reconstruction](#reconstruction) — 4 件
@@ -1065,6 +1065,33 @@ occupancyとflowの同時予測は動的シーン理解の中核課題であり�
 - Code: -
 
 ## HD Map
+
+### From Fragments to Global Maps: Learning Vectorized Map Aggregation with Large Language Models
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.02513
+- Code: -
+
+### MapLightning: Online Vectorized HD Map Construction with 1D Map Tokens
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.01905
+- Code: -
+
+### Leveraging Vision-Based Point Cloud Map Priors for Camera-Based 3D Object Detection and Online Vectorized HD Mapping
+
+IROS 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.26325
+- Code: -
 
 ### PseudoMapLabeler: Confidence-Aware Pseudo-Label Generation for Semi-Supervised Online Mapping
 
@@ -2305,6 +2332,15 @@ V2X協調認識と悪天候ロバスト性という自動運転認識の重要�
 
 ## AD Perception
 
+### CoDrive: Cross-Vehicle World-Consistent Video Generation with Precise Trajectory Control for Cooperative Driving
+
+arXiv 2026 / AD Perception
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.34749
+- Code: -
+
 ### Geometry-Grounded Unified 3D Perception for Autonomous Driving
 
 BMVC 2026 / AD Perception
@@ -2686,6 +2722,15 @@ BEV 知覚の主流が projection ベースに寄るなかで、depth の不確�
 - Code: -
 
 ## Gaussian Splatting
+
+### Gauss What You Need: Compact Gaussian Splatting Across Scene Scales
+
+arXiv 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.31248
+- Code: -
 
 ### Immediate 3D Gaussian Splat Reconstruction of Unordered Input with Global Consistency
 

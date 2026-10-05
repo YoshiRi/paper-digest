@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-09-26T04:51:21+00:00",
+  "updated_at": "2026-10-05T04:46:27+00:00",
   "config": {
     "query": [],
     "since": 2025,
@@ -6987,6 +6987,158 @@
       "llm_relevant": true,
       "llm_reason": "自動運転向けnuScenesデータセットでのマルチビューBEV 3D物体検出手法であり、対象テーマに直接合致する",
       "added_at": "2026-09-21T04:03:01+00:00"
+    },
+    {
+      "title": "From Fragments to Global Maps: Learning Vectorized Map Aggregation with Large Language Models",
+      "abstract": "Large-scale vectorized HD maps provide structured road information that is essential for perception, localization, and planning in autonomous driving. Constructing such maps requires aggregating noisy, fragmented, and overlapping local predictions collected along a vehicle trajectory into a coherent global map. Existing aggregation methods typically rely on hand-crafted rules for fragment association and refinement. However, a fixed set of thresholds cannot effectively handle variations in road structures and prediction errors, often requiring detector-specific tuning or manual adjustment. To address this limitation, we propose MapMergeLLM, a data-driven framework that formulates vectorized map aggregation as conditional sequence generation with a large language model. Given serialized local vectorized maps, our model directly predicts the aggregated global map polylines. To reduce dependence on any particular upstream detector, we train the model on synthetic local maps generated from clean vector maps using corruptions that simulate representative prediction errors. We further introduce a coordinate tokenizer with geometry-aware pretraining to precisely represent map coordinates. In addition, we propose a line-level association loss that explicitly supervises correspondences between local observations of the same map element. Experiments on Argoverse2 and nuScenes using multiple recent upstream detectors demonstrate that MapMergeLLM substantially outperforms heuristic and optimization-based aggregation baselines without detector-specific retraining.",
+      "paper_url": "https://arxiv.org/abs/2610.02513",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "HD Map",
+      "topics": [
+        "HD Map",
+        "AD Perception",
+        "3D Detection"
+      ],
+      "authors": [
+        "Ziwei Li",
+        "Yi-Tang Chen",
+        "Xiaoqi Wang",
+        "Wenbin He",
+        "Han-Wei Shen",
+        "Liu Ren"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-01T21:35:52Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 14.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-05T04:46:27+00:00"
+    },
+    {
+      "title": "MapLightning: Online Vectorized HD Map Construction with 1D Map Tokens",
+      "abstract": "Online vectorized HD map construction is essential for scaling safe autonomous driving and requires accurate, real-time inference. Prior methods typically rely on dense bird's-eye-view (BEV) grids as the intermediate representation. We propose \\textit{MapLightning}, which replaces the dense BEV grid with a compact set of 1D learnable map tokens. To construct map tokens from image features, we choose self-attention over vanilla cross-attention because it enables joint interactions and contextual aggregation among image and map tokens. Our transformer-based mapper concatenates map and image tokens, applies full self-attention, discards the image tokens, and retains the updated map tokens for decoding. This design offers three advantages. First, our representation is efficient, using fewer tokens, consuming less memory, and running faster. Second, the lightweight design allows the map decoder to use full rather than deformable cross-attention for better global context. Third, unlike BEV-based methods, our network does not use camera projection parameters, making it robust to camera-extrinsic perturbations. MapLightning uses up to 16.7$\\times$ fewer intermediate tokens than dense BEV-based methods and achieves state-of-the-art accuracy and efficiency on nuScenes and Argoverse~2. Its lightweight variant surpasses MapTRv2 by +10.1 mAP on nuScenes and +16.2 mAP on Argoverse~2, while delivering 1.73$\\times$ faster inference (40+ FPS) with 53\\% less memory. We further show improvements on uncertainty-aware map construction and downstream trajectory prediction. Code and models will be released.",
+      "paper_url": "https://arxiv.org/abs/2610.01905",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "HD Map",
+      "topics": [
+        "HD Map",
+        "AD Perception",
+        "3D Detection"
+      ],
+      "authors": [
+        "Shen Zheng",
+        "Anurag Ghosh",
+        "Mani Ramanagopal",
+        "Srinivasa Narasimhan"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-01T15:50:17Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 18.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-05T04:46:27+00:00"
+    },
+    {
+      "title": "CoDrive: Cross-Vehicle World-Consistent Video Generation with Precise Trajectory Control for Cooperative Driving",
+      "abstract": "Real-world driving is inherently multi-agent, yet most existing driving world models generate observations from a single ego vehicle. Independently extending them to multiple vehicles does not ensure that different agents observe a consistent shared world. We present CoDrive, a cross-vehicle, multi-view driving video generation framework that jointly generates observations of vehicles sharing the same dynamic scene with precise camera-trajectory control. CoDrive interleaves local self-attention, which models spatiotemporal dependencies among the views of each vehicle, with global self-attention, which enables information exchange and consistency modeling across vehicles. To explicitly encode their spatial relationships, all camera trajectories are represented in a shared world coordinate system and injected into the attention layers through projective relative positional encoding. We further adopt a progressive mixed-task training strategy that combines large-scale real-world single-agent data with synthetic cross-agent interaction data, allowing the model to benefit from real-world appearance distributions while learning cross-agent consistency from simulation. For systematic evaluation, we introduce CoDrive-Bench, a benchmark covering real and synthetic multi-vehicle scenarios and evaluating trajectory controllability, scene geometry consistency, and instance-level consistency. Experiments show that CoDrive improves trajectory controllability and cross-agent geometric and instance consistency while maintaining competitive visual quality.",
+      "paper_url": "https://arxiv.org/abs/2609.34749",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "AD Perception",
+      "topics": [
+        "AD Perception"
+      ],
+      "authors": [
+        "Yu Meng",
+        "Baining Zhao",
+        "Junta Wu",
+        "Tengfei Wang",
+        "Rongze Tang",
+        "Haiyu Zhang",
+        "Wenqiang Sun",
+        "Chen Gao",
+        "Zhibo Chen",
+        "Xinlei Chen",
+        "Yong Li",
+        "Xiao-Ping Zhang",
+        "Chunchao Guo"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-28T09:41:11Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 4.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-05T04:46:27+00:00"
+    },
+    {
+      "title": "Gauss What You Need: Compact Gaussian Splatting Across Scene Scales",
+      "abstract": "3D Gaussian Splatting reconstructs a scene as a collection of Gaussian primitives from a set of posed photographs called the capture. The number of primitives used to represent the scene affects reconstruction quality, storage, and rendering cost. How to select this number automatically across capture scales remains unresolved: configurations effective on standard benchmarks can leave larger captures with too few Gaussians to reconstruct fine details. We observe that the surface to represent, given by the capture's extent and resolution, is known before training, whereas its content complexity becomes apparent during training, through the reconstruction quality on the training views. We introduce TangoGS, which combines capture-derived model sizing with training-based adaptation: the capture determines the scale of the model, and training feedback determines its final size within that scale. Before training, TangoGS derives a learning allowance for model growth from the capture's total pixels after discounting views that re-observe the same scene points. During training, reconstruction quality guides how many Gaussians to add and remove. On 13 standard benchmark scenes, TangoGS matches the mean PSNR of the best-performing evaluated baseline, LeGS, with $48\\%$ fewer Gaussians. On eight large captures, the same configuration automatically scales to larger models when necessary, achieving the highest mean PSNR among evaluated methods: $0.54$ dB above the runner-up with $2.3\\times$ as many Gaussians. Together, capture-derived learning allowances and training-quality guided density control enable a state-of-the-art quality--size compromise across scene scales without retuning.",
+      "paper_url": "https://arxiv.org/abs/2609.31248",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Gaussian Splatting",
+      "topics": [
+        "Gaussian Splatting"
+      ],
+      "authors": [
+        "Afif Boudaoud",
+        "Jiayi Liu",
+        "Alexandru Calotoiu",
+        "Torsten Hoefler"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-25T13:25:59Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 6.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-05T04:46:27+00:00"
+    },
+    {
+      "title": "Leveraging Vision-Based Point Cloud Map Priors for Camera-Based 3D Object Detection and Online Vectorized HD Mapping",
+      "abstract": "Camera-based 3D object detection and online vectorized HD mapping provide compact scene representations for autonomous driving, but both depend on accurate metric geometry and remain limited by depth ambiguity. Over long-term deployment, observations from repeated traversals can be accumulated into persistent point cloud priors that provide geometric context beyond the current observations. Existing explicit point cloud prior approaches, however, rely on LiDAR-based map construction and therefore require expensive 3D ranging sensors. We propose a framework that constructs a static point cloud prior map from previous camera traversals using Pi3X and augments each point with DINOv3 features. At runtime, a local prior patch is retrieved using global localization, encoded with a sparse voxel backbone, and fused in bird's-eye view (BEV) with lifted multi-view camera features. Task-specific sparse transformer heads then predict 3D objects and vectorized map elements from the fused representation. On Argoverse 2, the vision-based prior improves a strong baseline from 0.287 to 0.299 CDS and from 0.669 to 0.750 vectorized mapping mAP. Ablations show that semantic DINOv3 features are particularly important for vectorized mapping. These results demonstrate that vision-built geometric-semantic priors provide an effective form of long-term scene memory for camera-based perception, improving both tasks without LiDAR for prior-map construction or online inference.",
+      "paper_url": "https://arxiv.org/abs/2609.26325",
+      "code_url": "",
+      "venue": "IROS 2026",
+      "year": 2026,
+      "topic": "HD Map",
+      "topics": [
+        "HD Map",
+        "3D Detection",
+        "Occupancy",
+        "AD Perception"
+      ],
+      "authors": [
+        "Markus Käppeler",
+        "Rohit Mohan",
+        "Abhinav Valada"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-22T12:36:48Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 20.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-05T04:46:27+00:00"
     }
   ]
 }
