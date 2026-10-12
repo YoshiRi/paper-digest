@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-05T04:46:27+00:00",
+  "updated_at": "2026-10-12T05:04:34+00:00",
   "config": {
     "query": [],
     "since": 2025,
@@ -7139,6 +7139,61 @@
       "llm_relevant": null,
       "llm_reason": "",
       "added_at": "2026-10-05T04:46:27+00:00"
+    },
+    {
+      "title": "Difference Feature Map Distillation: Transferring Inter-Sample Relational Knowledge Towards Efficient Transformer-Based Tracking",
+      "abstract": "In autonomous driving perception, visual object tracking systems must satisfy stringent latency and power constraints while remaining robust in complex and dynamic environments. Although transformer-based trackers achieve state-of-the-art accuracy, their substantial computational and memory overheads hinder deployment on real-time, resource-constrained platforms. To move toward this goal, we propose Difference Feature Map Knowledge Distillation (DFM-KD), a novel relational distillation framework tailored for transformer-based visual object tracking. Unlike conventional feature distillation methods that minimize point-wise discrepancies (e.g., mean squared error) between teacher and student feature representations, DFM-KD transfers knowledge through inter-sample feature differences, explicitly aligning the relational structure of the feature space. By distilling how the teacher models appearance variation and consistency across samples, rather than enforcing similarity in absolute activations, DFM-KD enables the student to better capture the structural dynamics of visual changes within a batch. As a result, the distilled model exhibits enhanced feature robustness and improved tracking performance. Extensive experiments demonstrate that DFM-KD consistently outperforms conventional feature-level distillation methods in both tracking precision and success rates.",
+      "paper_url": "https://arxiv.org/abs/2610.05707",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "AD Perception",
+      "topics": [
+        "AD Perception"
+      ],
+      "authors": [
+        "Zhicheng Ding",
+        "Xinyu Chu",
+        "Qing Tian"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-05T02:43:46Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 7.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-12T05:04:34+00:00"
+    },
+    {
+      "title": "Return-to-Home Feasible Micro-Aerial Vehicle Exploration for 3D Gaussian Splatting Reconstruction",
+      "abstract": "Micro aerial vehicles (MAVs) enable rapid indoor 3D reconstruction for inspection and time-critical situational awareness, but must operate under strict flight-time budgets and safety constraints that require explicit return-to-home (RTH) feasibility with a conservative margin. We present a topology-first active reconstruction framework that decouples high-fidelity rendering from navigation. A dense 3D Gaussian Splatting (3DGS) map is optimized as the reconstruction target, while a lightweight Truncated Signed Distance Field (TSDF)/occupancy scaffold supports conservative collision checking and online construction of a sparse 3D Voronoi skeleton roadmap. Since directly extracting roadmaps from TSDF geometry can be unstable under noisy and incomplete online fusion, we validate nodes and edges using carved free-space consistency and dense visibility checks, which suppress behind-wall phantom structure and stabilize planning. Viewpoints are selected on the roadmap using a flight-time-budget-aware objective and a lightweight receding-horizon lookahead to improve non-myopic exploration behavior. We evaluate on photorealistic indoor simulation benchmarks (ReplicaCAD, Gibson, and HM3D), reporting reconstruction coverage/error, RTH success, and computational cost. Results demonstrate improved or competitive performance relative to recent GS-based baselines under identical flight-time budgets.",
+      "paper_url": "https://arxiv.org/abs/2610.04013",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Gaussian Splatting",
+      "topics": [
+        "Gaussian Splatting",
+        "Reconstruction",
+        "Occupancy",
+        "AD Perception"
+      ],
+      "authors": [
+        "Prajit Krisshnakumar",
+        "Fan Yang",
+        "Koichiro Niinuma"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-02T20:19:29Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 15.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-12T05:04:34+00:00"
     }
   ]
 }

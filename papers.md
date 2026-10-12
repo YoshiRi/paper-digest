@@ -1,14 +1,14 @@
 # 論文ダイジェスト
 
-生成日時: 2026-10-05 04:46 / 収録 189 件
+生成日時: 2026-10-12 05:04 / 収録 191 件
 
 ## トピック
 
 - [Occupancy](#occupancy) — 55 件
 - [HD Map](#hd-map) — 39 件
 - [3D Detection](#3d-detection) — 29 件
-- [AD Perception](#ad-perception) — 21 件
-- [Gaussian Splatting](#gaussian-splatting) — 15 件
+- [AD Perception](#ad-perception) — 22 件
+- [Gaussian Splatting](#gaussian-splatting) — 16 件
 - [World Model](#world-model) — 11 件
 - [Scene Understanding](#scene-understanding) — 5 件
 - [Reconstruction](#reconstruction) — 4 件
@@ -2332,6 +2332,15 @@ V2X協調認識と悪天候ロバスト性という自動運転認識の重要�
 
 ## AD Perception
 
+### Difference Feature Map Distillation: Transferring Inter-Sample Relational Knowledge Towards Efficient Transformer-Based Tracking
+
+arXiv 2026 / AD Perception
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.05707
+- Code: -
+
 ### CoDrive: Cross-Vehicle World-Consistent Video Generation with Precise Trajectory Control for Cooperative Driving
 
 arXiv 2026 / AD Perception
@@ -2722,6 +2731,15 @@ BEV 知覚の主流が projection ベースに寄るなかで、depth の不確�
 - Code: -
 
 ## Gaussian Splatting
+
+### Return-to-Home Feasible Micro-Aerial Vehicle Exploration for 3D Gaussian Splatting Reconstruction
+
+arXiv 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.04013
+- Code: -
 
 ### Gauss What You Need: Compact Gaussian Splatting Across Scene Scales
 
