@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-10-12T05:04:34+00:00",
+  "updated_at": "2026-10-26T03:54:10+00:00",
   "config": {
     "query": [],
     "since": 2025,
@@ -1016,8 +1016,8 @@
       "title": "CodecSplat: Ultra-Compact Latent Coding for Feed-Forward 3D Gaussian Splatting",
       "abstract": "While feed-forward 3D Gaussian splatting reconstructs renderable Gaussian primitives from sparse context views without per-scene optimization, existing pipelines do not provide a compact scene representation for storage or transmission. A natural solution is to apply existing 3DGS compression methods to the generated Gaussian primitives. However, this approach operates on the final irregular 3D representation and is decoupled from the internal feature-to-Gaussian generation process, which limits compression efficiency. To address this, we introduce CodecSplat, an ultra-compact latent coding framework for feed-forward 3D Gaussian splatting. CodecSplat first encodes an intermediate 2D Gaussian-generation feature into an entropy-coded scene bitstream. At the decoder, the latent feature is reconstructed and used to predict depth and Gaussian parameters, which are then mapped to 3D Gaussian primitives. Note that, by integrating compression into the feed-forward Gaussian generation pipeline, CodecSplat avoids inefficient compression over irregular 3D Gaussian primitives and allows the codec to exploit the structured intermediate feature representation. We instantiate CodecSplat on a feed-forward Gaussian splatting backbone with depth-guided multi-view feature refinement and a hierarchical learned feature codec. On DL3DV and RealEstate10K datasets, CodecSplat achieves 23.56-26.36 dB and 24.76-27.05 dB PSNR with only 20.00-107.77 KiB and 3.37-12.51 KiB per scene, respectively. This is roughly one order of magnitude smaller than compressing feed-forward generated Gaussian primitives, while preserving controllable rate-distortion behavior.",
       "paper_url": "https://arxiv.org/abs/2605.25563",
-      "code_url": "",
-      "venue": "arXiv 2026",
+      "code_url": "https://github.com/pengpeng-yu/CodecSplat",
+      "venue": "NEURIPS 2026",
       "year": 2026,
       "topic": "Gaussian Splatting",
       "topics": [
@@ -7194,6 +7194,211 @@
       "llm_relevant": null,
       "llm_reason": "",
       "added_at": "2026-10-12T05:04:34+00:00"
+    },
+    {
+      "title": "FM-Occ: Feature-Diverse Upsampling and Memory-Aware Decoding for 3D Occupancy Prediction",
+      "abstract": "3D semantic occupancy prediction estimates voxel-wise occupancy and semantic labels throughout a scene. Our experiments reveal that conventional sparse transposed-convolution upsampling yields poorly differentiated voxel responses and that successive decoder layers discard previously correct semantic predictions. To address these issues, we present Feature-Diverse Upsampling and Memory-Aware Decoding for 3D Occupancy Prediction (FM-Occ), comprising two components. First, 3D Sparse Subvoxel Shuffle (3S) mitigates feature homogenization by constructing candidate child features in the channel dimension, jointly transforming and normalizing them, and then rearranging them onto a finer sparse grid with explicit feature-coordinate correspondence. Second, Entropy-Regulated Layer-wise Memory (ER-LM) retains semantic information across decoder layers by maintaining a layer-wise memory for each query through gated recurrent updates and using prediction entropy to regulate the historical information propagated to the next layer. During training, a class-weighted entropy loss Lcwe provides label-guided regularization for matched semantic queries. On SemanticKITTI, 3S increases the spatial coefficient of variation of normalized voxel-wise root-mean-square (RMS) responses from 0.41% to 4.03%, while ER-LM reduces semantic degradation and improves error correction across decoder layers. The combined FM-Occ improves mIoU from 12.16% to 12.73% with negligible memory overhead. ER-LM further improves mIoU in the BEV-based DISC framework from 16.78% to 17.17%, supporting its applicability across 3D voxel-based and BEV-based architectures.",
+      "paper_url": "https://arxiv.org/abs/2610.29388",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Occupancy",
+      "topics": [
+        "Occupancy",
+        "Scene Understanding",
+        "HD Map",
+        "3D Detection"
+      ],
+      "authors": [
+        "Yujia Zhai",
+        "Guoming Huang",
+        "Zhuanghuai Wang",
+        "Bangquan Xie"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-21T08:14:31Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 17.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-26T03:54:10+00:00"
+    },
+    {
+      "title": "OV-Foam: How 3D Representations Shape Semantic Feature Lifting",
+      "abstract": "Existing feature lifting approaches for open-vocabulary segmentation rely on simple backprojection to assign features to primitives. In the case of 3D Gaussian splatting reconstruction, the primitives overlap heavily, leading to suboptimal reconstructions, governed by many primitives per ray. Backprojection, however, reduces to a least-squares solvable problem, exactly when no two primitives share a ray. Motivated by this insight, we propose OV-Foam, which uses PowerFoam as the underlying representation. This representation uses a power-diagram to partition the scene, resulting in zero overlap between primitives and a substantial reduction in primitives per ray, which ultimately simplifies the lifting problem and allows for closer-to-optimal feature assignment. We show that the space partitioning primitives of OV-Foam reach near-optimal assignment, and our experiments demonstrate improved open-vocabulary segmentation over Gaussian baselines.",
+      "paper_url": "https://arxiv.org/abs/2610.28131",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Gaussian Splatting",
+      "topics": [
+        "Gaussian Splatting",
+        "Open-world"
+      ],
+      "authors": [
+        "Yousef Rajeh",
+        "Alejandra Esparza Pelcastre",
+        "Ivan Viola",
+        "Dominik Engel"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-20T12:38:14Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 7.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-26T03:54:10+00:00"
+    },
+    {
+      "title": "Differentiable Task-Driven Coded Aperture Camera Design with 3D Gaussian Scene Representations",
+      "abstract": "Camera design heavily influences perception task performance, yet cameras are typically designed by domain experts through costly experimentation, in isolation from the tasks they serve. Existing joint-design methods either rely on differentiable simulation limited to pre-captured 2D images, restricting them to optics or image-processing pipeline design, or use non-differentiable camera simulators optimised with derivative-free or reinforcement-learning methods that scale poorly with the number of design parameters. We present a differentiable framework for jointly designing complex camera systems and downstream perception tasks. We use it to design two coded-aperture depth-from-defocus cameras, a monocular and a stereo configuration, by jointly optimising the coded aperture mask, camera parameters, and a depth estimation network end-to-end. Our framework represents scenes with 3D Gaussian Splatting reconstructed from real-world captures, providing a differentiable image formation process for gradient-based optimisation over design spaces intractable for prior differentiable approaches. Results demonstrate that our differentiable method improves over existing coded aperture design and non-differentiable camera design baselines, offering a step forward in automated and principled camera design for autonomous systems.",
+      "paper_url": "https://arxiv.org/abs/2610.28004",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Gaussian Splatting",
+      "topics": [
+        "Gaussian Splatting",
+        "Reconstruction"
+      ],
+      "authors": [
+        "Chengyang Yan",
+        "Donald G. Dansereau"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-20T10:48:08Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 5.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-26T03:54:10+00:00"
+    },
+    {
+      "title": "UBD-Bench: Benchmarking and Analyzing Unimodal Branch Degradation in Multimodal Perception for Autonomous Driving",
+      "abstract": "Multimodal perception improves autonomous-driving performance by combining complementary sensor information. However, stronger multimodal predictions do not necessarily imply stronger representations in each modality-specific branch. Such branch-level weaknesses can remain hidden in conventional output-level evaluation. We introduce UBD-Bench, a systematic benchmark for studying unimodal branch degradation (UBD) in multimodal perception. UBD-Bench uses a Paired Frozen-Branch Probe to compare the task-relevant representation quality of the same modality after independent unimodal training and multimodal joint training under matched decoding conditions. Across four autonomous-driving perception tasks and 10 models, we find that Camera branches consistently degrade after multimodal joint training, whereas LiDAR branches exhibit weaker and more model-dependent changes, revealing a pronounced modality asymmetry. Hierarchical probing further shows that Camera-branch degradation extends from the visual backbone through the Camera-to-BEV pathway and is most severe at the pre-fusion Camera BEV representation. Guided by this diagnosis, we introduce unimodal-to-multimodal distillation at the degraded representation. This intervention consistently improves both Camera-branch Probe performance and full-model performance across all four tasks. These results show that multimodal gains can coexist with degraded unimodal representations, highlighting branch-level representation quality as an important dimension for evaluating and improving multimodal perception.",
+      "paper_url": "https://arxiv.org/abs/2610.25448",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "HD Map",
+      "topics": [
+        "HD Map",
+        "AD Perception"
+      ],
+      "authors": [
+        "Ang Liu",
+        "Xiang Gu",
+        "Ruikai Li",
+        "Qiyue Wang",
+        "Yizhe Fan",
+        "Hao Shan",
+        "Ziyang Yan",
+        "Han Jiang",
+        "Zhenning Li",
+        "Xiaoshuai Hao",
+        "Yilong Ren",
+        "Zhiyong Cui",
+        "Haiyang Yu"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-18T18:11:32Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 6.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-26T03:54:10+00:00"
+    },
+    {
+      "title": "RadarGSOcc: Doppler-Aware 3D Semantic Occupancy Prediction Using 4D Radar Tensor with Geometric-Semantic Feature Extraction",
+      "abstract": "3D semantic occupancy prediction is crucial for autonomous driving, but camera-based methods degrade in low-light conditions and LiDAR-based methods are sensitive to adverse weather. 4D radar is more robust, yet its sparsity and the high cost of radar tensor processing limit its use. We propose Radar Geometric-Semantic Occupancy Prediction (RadarGSOcc), an efficient framework that directly processes 4D radar tensors by separately extracting geometric and semantic features, including Doppler information, with a deformable attention-based geometric refinement module as its key component. We also introduce the K-Radar 3DSemOcc benchmark, the first large-scale benchmark for 3D semantic occupancy prediction using 4D radar tensors, built on the K-Radar dataset with refined LiDAR-based annotations. RadarGSOcc predicts 15 classes within a 51.2m range and achieves 38.2% IoU, 7.6% mIoU, and 25.5% weighted mIoU, outperforming RadarOcc by 17% relative (25.5 vs. 21.9) in weighted mIoU while using fewer parameters and lower computation. It substantially improves truck prediction while trading off car accuracy, outperforms camera-based approaches, and narrows the gap with LiDAR-based methods. To assess robustness without per-frame ground truth in adverse weather, we further propose a novel proxy metric, Environment-Based KL Divergence (EBKL), under which 4D radar proves a reliable and efficient modality for 3D semantic occupancy prediction. The dataset and code will be publicly available.",
+      "paper_url": "https://arxiv.org/abs/2610.18686",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Occupancy",
+      "topics": [
+        "Occupancy",
+        "Scene Understanding",
+        "AD Perception"
+      ],
+      "authors": [
+        "Christofel Rio Goenawan",
+        "Dong-Hee Paek",
+        "Seung-Hyun Kong"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-13T16:40:59Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 20.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-26T03:54:10+00:00"
+    },
+    {
+      "title": "Safety-Oriented Trajectory Ranking from BEV Perception Outputs",
+      "abstract": "Bird's-Eye-View (BEV) representations are increasingly used as compact inputs for autonomous driving perception and planning. However, lightweight and interpretable methods for evaluating candidate ego trajectories directly on BEV outputs remain useful for vehicular safety workflows, rapid prototyping, and human-in-the-loop validation. This paper presents a modular trajectory ranking pipeline that consumes BEVFusion object detections and map segmentations derived from nuScenes sensor data and ranks manually specified candidate trajectories according to safety-first criteria. The ranking prioritizes avoiding collisions and walkway violations, then smaller end distance to the target, and finally path efficiency. To study whether these rule-based rankings resemble human judgment, we created seven BEV traffic scenarios and compared the script output with preferences from a survey of 21 participants. Across 146 pairwise votes, 124 matched the trajectory ranked first by the evaluator, corresponding to an overall agreement of 84.9 %. The results indicate that simple BEV-centric safety heuristics can approximate human preferences in constrained trajectory choice tasks while remaining transparent enough for analysis, dataset curation, and autonomous driving studies.",
+      "paper_url": "https://arxiv.org/abs/2610.14066",
+      "code_url": "https://github.com/UniBwTAS/bev-trajectory-eval",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "AD Perception",
+      "topics": [
+        "AD Perception",
+        "HD Map",
+        "3D Detection"
+      ],
+      "authors": [
+        "Leon Pohl",
+        "Martin Frauendorfer",
+        "Corinna Schmitt",
+        "Mirko Maehlisch"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-07T11:58:53Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 18.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-26T03:54:10+00:00"
+    },
+    {
+      "title": "ZipSplat: Fewer Gaussians, Better Splats",
+      "abstract": "Feed-forward 3D Gaussian Splatting reconstructs scenes from images in seconds. Pixel-aligned methods keep every Gaussian grounded in an observation, but produce redundant, potentially misaligned Gaussians across views. Token-based methods instead aggregate all views into a fixed set of learned tokens but lack explicit observation support and use a fixed reconstruction budget. We introduce ZipSplat, a method that predicts a compact, observation-grounded scene representation whose size is set at inference. It derives each scene token from an image patch rather than a learned query, and decodes it into freely placed 3D Gaussians. Tokens across views are merged into a compact set whose size is adjustable at inference. However, without geometric supervision, decoded Gaussians can drift from their source patch, and merging can mix tokens from different surfaces. We therefore introduce two geometric losses to ground and shape this representation. A cone loss ties each token's Gaussians to its source patch, and GeoCE aligns token similarity with 3D proximity so that tokens observing the same surface merge together. Building on these observation--geometry associations, we further introduce TokenBA, a token-level bundle adjustment that refines scene tokens and camera poses in a few seconds. ZipSplat requires neither camera poses nor intrinsics, yet outperforms pixel-aligned and token-based baselines on DL3DV and RealEstate10K, even those given ground-truth cameras. It further generalizes zero-shot to Mip-NeRF360 and ScanNet++. Our project page is at https://veichta.com/zipsplat.",
+      "paper_url": "https://arxiv.org/abs/2606.05102",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Gaussian Splatting",
+      "topics": [
+        "Gaussian Splatting"
+      ],
+      "authors": [
+        "Alexander Veicht",
+        "Sunghwan Hong",
+        "Dániel Baráth",
+        "Marc Pollefeys"
+      ],
+      "source": "arxiv",
+      "published": "2026-06-03T17:04:30Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 7.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-10-26T03:54:10+00:00"
     }
   ]
 }

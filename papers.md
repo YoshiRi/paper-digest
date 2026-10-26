@@ -1,14 +1,14 @@
 # 論文ダイジェスト
 
-生成日時: 2026-10-12 05:04 / 収録 191 件
+生成日時: 2026-10-26 03:54 / 収録 198 件
 
 ## トピック
 
-- [Occupancy](#occupancy) — 55 件
-- [HD Map](#hd-map) — 39 件
+- [Occupancy](#occupancy) — 57 件
+- [HD Map](#hd-map) — 40 件
 - [3D Detection](#3d-detection) — 29 件
-- [AD Perception](#ad-perception) — 22 件
-- [Gaussian Splatting](#gaussian-splatting) — 16 件
+- [AD Perception](#ad-perception) — 23 件
+- [Gaussian Splatting](#gaussian-splatting) — 19 件
 - [World Model](#world-model) — 11 件
 - [Scene Understanding](#scene-understanding) — 5 件
 - [Reconstruction](#reconstruction) — 4 件
@@ -18,6 +18,24 @@
 - [Map Update](#map-update) — 1 件
 
 ## Occupancy
+
+### FM-Occ: Feature-Diverse Upsampling and Memory-Aware Decoding for 3D Occupancy Prediction
+
+arXiv 2026 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.29388
+- Code: -
+
+### RadarGSOcc: Doppler-Aware 3D Semantic Occupancy Prediction Using 4D Radar Tensor with Geometric-Semantic Feature Extraction
+
+arXiv 2026 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.18686
+- Code: -
 
 ### OccAnyScene: Towards Unified Indoor-Outdoor 3D Occupancy Prediction
 
@@ -1065,6 +1083,15 @@ occupancyとflowの同時予測は動的シーン理解の中核課題であり�
 - Code: -
 
 ## HD Map
+
+### UBD-Bench: Benchmarking and Analyzing Unimodal Branch Degradation in Multimodal Perception for Autonomous Driving
+
+arXiv 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.25448
+- Code: -
 
 ### From Fragments to Global Maps: Learning Vectorized Map Aggregation with Large Language Models
 
@@ -2332,6 +2359,15 @@ V2X協調認識と悪天候ロバスト性という自動運転認識の重要�
 
 ## AD Perception
 
+### Safety-Oriented Trajectory Ranking from BEV Perception Outputs
+
+arXiv 2026 / AD Perception
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.14066
+- Code: https://github.com/UniBwTAS/bev-trajectory-eval
+
 ### Difference Feature Map Distillation: Transferring Inter-Sample Relational Knowledge Towards Efficient Transformer-Based Tracking
 
 arXiv 2026 / AD Perception
@@ -2732,6 +2768,24 @@ BEV 知覚の主流が projection ベースに寄るなかで、depth の不確�
 
 ## Gaussian Splatting
 
+### OV-Foam: How 3D Representations Shape Semantic Feature Lifting
+
+arXiv 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.28131
+- Code: -
+
+### Differentiable Task-Driven Coded Aperture Camera Design with 3D Gaussian Scene Representations
+
+arXiv 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.28004
+- Code: -
+
 ### Return-to-Home Feasible Micro-Aerial Vehicle Exploration for 3D Gaussian Splatting Reconstruction
 
 arXiv 2026 / Gaussian Splatting
@@ -2767,6 +2821,15 @@ arXiv 2026 / Gaussian Splatting
 大規模かつ動的・非順序な取得データからの高速3DGS再構成技術は、自動運転向けの地図・シーン再構成やオンラインHDマップ生成技術の基盤要素として応用可能であり、Gaussian Splattingの実運用化に向けた重要な進展として参照価値が高い。
 
 - Paper: https://arxiv.org/abs/2607.14481
+- Code: -
+
+### ZipSplat: Fewer Gaussians, Better Splats
+
+arXiv 2026 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2606.05102
 - Code: -
 
 ### 360-GeoGS: Geometrically Consistent Feed-Forward 3D Gaussian Splatting Reconstruction for 360 Images
