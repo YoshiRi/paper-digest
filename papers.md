@@ -1,13 +1,13 @@
 # 論文ダイジェスト
 
-生成日時: 2026-10-26 03:54 / 収録 198 件
+生成日時: 2026-11-02 05:05 / 収録 199 件
 
 ## トピック
 
 - [Occupancy](#occupancy) — 57 件
 - [HD Map](#hd-map) — 40 件
 - [3D Detection](#3d-detection) — 29 件
-- [AD Perception](#ad-perception) — 23 件
+- [AD Perception](#ad-perception) — 24 件
 - [Gaussian Splatting](#gaussian-splatting) — 19 件
 - [World Model](#world-model) — 11 件
 - [Scene Understanding](#scene-understanding) — 5 件
@@ -2358,6 +2358,15 @@ V2X協調認識と悪天候ロバスト性という自動運転認識の重要�
 - Code: -
 
 ## AD Perception
+
+### C-DFF: Concept-Level Diagnostics for Mechanism Parity in Simulation-Based Validation of Autonomous Driving Perception
+
+arXiv 2026 / AD Perception
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2610.33760
+- Code: -
 
 ### Safety-Oriented Trajectory Ranking from BEV Perception Outputs
 
