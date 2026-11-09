@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-02T05:05:15+00:00",
+  "updated_at": "2026-11-09T05:21:43+00:00",
   "config": {
     "query": [],
     "since": 2025,
@@ -7430,6 +7430,157 @@
       "llm_relevant": null,
       "llm_reason": "",
       "added_at": "2026-11-02T05:05:15+00:00"
+    },
+    {
+      "title": "Hierarchical Incremental Beta Splatting for Online Reconstruction",
+      "abstract": "Online 3D Gaussian Splatting reconstructs a scene during capture: each keyframe spawns primitives once and refines them for only a few dozen iterations, leaving little chance to fix poor initialization or missing detail. Gaussians are also inherently soft, needing many overlaps for solid surfaces. We present Hierarchical Incremental Beta Splatting (HIBS), which brings beta kernels to incremental reconstruction. Their shape parameter interpolates between a soft, Gaussian-like profile and a flat-topped, near-opaque surfel, acting as a confidence dial for geometry. Our confidence-aware spawning uses geometric observability and multi-view depth agreement to initialize both opacity and shape, producing solid primitives where geometry is verifiable and soft, correctable primitives where it is not. As online densification, error-driven relocation recycles stale primitives into photometric-error hotspots. Bounded beta kernel support enables exact tile culling and faster rasterization, and a closed-form, shape-preserving merging formulation provides a level-of-detail (LOD) hierarchy for fast optimization and real-time rendering. On Mip-NeRF 360 in the on-the-fly protocol, HIBS improves PSNR by up to 0.8 dB while reducing optimization time by up to 40%. Project page: https://linus-franke.com/hibs/",
+      "paper_url": "https://arxiv.org/abs/2611.08288",
+      "code_url": "",
+      "venue": "WACV 2027",
+      "year": 2026,
+      "topic": "Gaussian Splatting",
+      "topics": [
+        "Gaussian Splatting",
+        "Reconstruction"
+      ],
+      "authors": [
+        "Linus Franke"
+      ],
+      "source": "arxiv",
+      "published": "2026-11-05T16:52:46Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 8.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-09T05:21:43+00:00"
+    },
+    {
+      "title": "ReSMap: Recasting Satellite Priors for Robust and Accurate Online HD Map Construction",
+      "abstract": "Despite recent advances in camera-based online HD map construction, these systems remain susceptible to sensor failures due to their reliance on onboard cameras. In contrast, satellite images remain available independently of real-time sensing conditions as they are cached offline. Existing methods utilizing satellite images, however, primarily leverage them under nominal conditions, without explicitly addressing them as redundancy when a sensor degrades. To address this gap, we propose ReSMap, a redundancy-aware camera-satellite fusion framework for robust online HD map construction. Our framework explicitly leverages satellite images as a complementary source to improve robustness against camera failures. A Predict-then-Fuse (PTF) module fuses camera and satellite BEV features by using each branch's own prediction confidence as a per-pixel reliability weight, with no learned router. An Object-Centric Cooperative Multi-modal Query (OCMQ) decoder then extends this per-modality separation to the query level: each modality cross-attends only to its own BEV, and per-modality updates are merged through a learned per-token gate. Our model achieves state-of-the-art performance on nuScenes across all splits and range settings. More importantly, it also sets the new state-of-the-art under camera-failure scenarios, demonstrating that satellite images serve not only as a strong prior but as practical redundancy for robust online HD mapping.",
+      "paper_url": "https://arxiv.org/abs/2611.04352",
+      "code_url": "https://github.com/dehsurc/ReSMap",
+      "venue": "NEURIPS 2026",
+      "year": 2026,
+      "topic": "HD Map",
+      "topics": [
+        "HD Map",
+        "3D Detection",
+        "AD Perception"
+      ],
+      "authors": [
+        "Kyungmin Kim",
+        "Sumin Lee",
+        "Sungoh Jeong",
+        "DoHyun Lim",
+        "Seonghyun Park",
+        "Soonmin Hwang"
+      ],
+      "source": "arxiv",
+      "published": "2026-11-03T05:37:27Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 15.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-09T05:21:43+00:00"
+    },
+    {
+      "title": "Fast-Slow Evolutionary Occupancy Prediction via Controlled Dynamics",
+      "abstract": "3D semantic occupancy prediction provides dense geometric and semantic scene representations for autonomous driving, where both high accuracy and low response latency are crucial for safe downstream forecasting and planning. Existing methods usually exhibit different accuracy-latency characteristics. Performance-oriented models provide stronger geometric and semantic predictions, while deployment-friendly models provide faster responses. This motivates EvoOcc, a fast-slow evolutionary occupancy prediction framework that jointly exploits their complementary strengths to improve the accuracy-latency balance without changing the upstream architectures. EvoOcc models evolutionary occupancy prediction as a continuous time controlled dynamical system, enabling flexible adaptation to variable slow system delays and irregular fast system arrivals. The framework further decomposes the evolution process into dual state evolution where ego state evolution compensates for the deterministic coordinate shifts and scene state evolution models the genuine geometric and semantic scene changes. Extensive experiments on three different fast-slow system pairs and irregular prediction arrivals show that EvoOcc consistently improves over fast system baselines while maintaining much lower latency than the slow system, indicating a favorable accuracy-latency balance and stable behavior under practical inference situations.",
+      "paper_url": "https://arxiv.org/abs/2611.02499",
+      "code_url": "",
+      "venue": "NEURIPS 2026",
+      "year": 2026,
+      "topic": "Occupancy",
+      "topics": [
+        "Occupancy",
+        "Scene Understanding",
+        "AD Perception",
+        "Occupancy Forecasting"
+      ],
+      "authors": [
+        "Runhe Yang",
+        "Zhiyuan Zhou",
+        "Yuxiang Yan",
+        "Xuetong Yang",
+        "Yikai Pan",
+        "Jiacheng Tang",
+        "Zhuolin He",
+        "Jianhua Han",
+        "Hang Xu",
+        "Jian Pu"
+      ],
+      "source": "arxiv",
+      "published": "2026-11-02T04:20:07Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 19.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-09T05:21:43+00:00"
+    },
+    {
+      "title": "How Reliable Are Object Detection Models Beyond Clear Weather? A Deployment-Oriented Robustness Study for Autonomous Driving",
+      "abstract": "Autonomous driving perception systems must maintain reliable object detection under diverse environmental conditions, not only in clear daytime scenes. However, the cross-weather robustness of modern detectors remains insufficiently characterised under source-only evaluation. This study evaluates representative object detection architectures trained exclusively on clear daytime driving scenes and tested without adaptation under unseen fog, rain, snow, and night conditions. The evaluation covers lightweight and medium-scale one-stage, two-stage, and transformer-based detectors within a unified protocol. Robustness is assessed using performance Drop (%), a Weather Robustness Index (WRI), and class-level sensitivity analysis for critical road participants, including cars, buses, trucks, and persons. Prediction confidence reliability under environmental domain shift is measured using Expected Calibration Error (ECE). Results reveal consistent performance degradation in adverse conditions, reaching 62.90% at night. Buses show the highest sensitivity to environmental variability, while cars remain comparatively stable across weather transitions. Comparisons indicate that YOLO-based detectors exhibit the lowest calibration mismatch, reflecting stronger agreement between predicted confidence and empirical detection correctness. In contrast, DETR achieves the lowest robustness score, with a WRI of 0.6859, indicating greater vulnerability to cross-weather domain shift. These findings offer deployment-oriented insights into detector robustness and confidence reliability for safety-critical intelligent vehicle perception systems.",
+      "paper_url": "https://arxiv.org/abs/2611.00071",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "AD Perception",
+      "topics": [
+        "AD Perception"
+      ],
+      "authors": [
+        "Munshaibur Rahman Mahin",
+        "Isha Das",
+        "Most. Sonia Islam",
+        "Mohammad Sakib Mahmood",
+        "M. F. Mridha",
+        "Md. Jakir Hossen"
+      ],
+      "source": "arxiv",
+      "published": "2026-10-15T17:00:50Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 8.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-09T05:21:43+00:00"
+    },
+    {
+      "title": "Stabilizing Camera-Controlled Novel View Synthesis at Inference Time",
+      "abstract": "Training-free, camera-controlled novel view synthesis from a single image using pre-trained video diffusion models often becomes unstable under large camera motion and long generation horizons. Existing approaches commonly combine several inference-time components, making it unclear which design choices are most important for stability. This work identifies the amount of camera motion handled by each diffusion pass as the main factor. CamTrol++ splits the camera path into passes that each cover at most a fixed rotation and generates them one after another, so that every pass stays within the range of motion the backbone handles well. A matched study, in which every setting is scored on the same poses of the same $60^\\circ$ orbit, shows that geometric error grows steadily with the arc per pass, while a single SVD pass both loses geometry and tends to freeze the camera. Under one shared camera path, CamTrol++ achieves the lowest epipolar error and the best held-out 3D Gaussian Splatting reconstruction among CamTrol, NVS-Solver and WAVE, and reaches the quality of CamTrol with the same pass structure at least $3.2\\times$ faster. On real RealEstate10K motion it matches CamTrol at half the run time (NVS-Solver is more faithful but $8\\times$ slower). The same procedure also improves 3D reconstruction with a second video backbone, LTX-Video. Geometry-constrained spatial attention, color anchoring at pass boundaries and a registration-free warping pipeline that makes warping $6.1\\times$ faster complete the framework. The method remains effective for 56-frame generation and under controlled depth corruption. These results show that careful control of camera motion at inference time can substantially improve the stability of camera-controlled novel view synthesis.",
+      "paper_url": "https://arxiv.org/abs/2609.03639",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Reconstruction",
+      "topics": [
+        "Reconstruction",
+        "Gaussian Splatting",
+        "World Model"
+      ],
+      "authors": [
+        "Prajwal Singh",
+        "Arjun Badola",
+        "Seema Kumari",
+        "Hajime Nagahara",
+        "Shanmuganathan Raman"
+      ],
+      "source": "arxiv",
+      "published": "2026-09-03T10:39:44Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 14.0,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-09T05:21:43+00:00"
     }
   ]
 }

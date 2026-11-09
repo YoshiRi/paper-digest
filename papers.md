@@ -1,23 +1,32 @@
 # 論文ダイジェスト
 
-生成日時: 2026-11-02 05:05 / 収録 199 件
+生成日時: 2026-11-09 05:21 / 収録 204 件
 
 ## トピック
 
-- [Occupancy](#occupancy) — 57 件
-- [HD Map](#hd-map) — 40 件
+- [Occupancy](#occupancy) — 58 件
+- [HD Map](#hd-map) — 41 件
 - [3D Detection](#3d-detection) — 29 件
-- [AD Perception](#ad-perception) — 24 件
-- [Gaussian Splatting](#gaussian-splatting) — 19 件
+- [AD Perception](#ad-perception) — 25 件
+- [Gaussian Splatting](#gaussian-splatting) — 20 件
 - [World Model](#world-model) — 11 件
+- [Reconstruction](#reconstruction) — 5 件
 - [Scene Understanding](#scene-understanding) — 5 件
-- [Reconstruction](#reconstruction) — 4 件
 - [Occupancy Forecasting](#occupancy-forecasting) — 3 件
 - [Open-world](#open-world) — 3 件
 - [Topology](#topology) — 3 件
 - [Map Update](#map-update) — 1 件
 
 ## Occupancy
+
+### Fast-Slow Evolutionary Occupancy Prediction via Controlled Dynamics
+
+NEURIPS 2026 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2611.02499
+- Code: -
 
 ### FM-Occ: Feature-Diverse Upsampling and Memory-Aware Decoding for 3D Occupancy Prediction
 
@@ -1083,6 +1092,15 @@ occupancyとflowの同時予測は動的シーン理解の中核課題であり�
 - Code: -
 
 ## HD Map
+
+### ReSMap: Recasting Satellite Priors for Robust and Accurate Online HD Map Construction
+
+NEURIPS 2026 / HD Map
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2611.04352
+- Code: https://github.com/dehsurc/ReSMap
 
 ### UBD-Bench: Benchmarking and Analyzing Unimodal Branch Degradation in Multimodal Perception for Autonomous Driving
 
@@ -2368,6 +2386,15 @@ arXiv 2026 / AD Perception
 - Paper: https://arxiv.org/abs/2610.33760
 - Code: -
 
+### How Reliable Are Object Detection Models Beyond Clear Weather? A Deployment-Oriented Robustness Study for Autonomous Driving
+
+arXiv 2026 / AD Perception
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2611.00071
+- Code: -
+
 ### Safety-Oriented Trajectory Ranking from BEV Perception Outputs
 
 arXiv 2026 / AD Perception
@@ -2776,6 +2803,15 @@ BEV 知覚の主流が projection ベースに寄るなかで、depth の不確�
 - Code: -
 
 ## Gaussian Splatting
+
+### Hierarchical Incremental Beta Splatting for Online Reconstruction
+
+WACV 2027 / Gaussian Splatting
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2611.08288
+- Code: -
 
 ### OV-Foam: How 3D Representations Shape Semantic Feature Lifting
 
@@ -3299,6 +3335,93 @@ ICCV 2025 / World Model
 - Paper: https://arxiv.org/abs/2408.00415
 - Code: -
 
+## Reconstruction
+
+### Stabilizing Camera-Controlled Novel View Synthesis at Inference Time
+
+arXiv 2026 / Reconstruction
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2609.03639
+- Code: -
+
+### RoadVGGT: Road-Structure-Aware Feed-Forward Road Surface Reconstruction
+
+arXiv 2026 / Reconstruction
+
+**概要**
+
+大規模道路サーフェス再構成を、シーンごとの最適化なしにfeed-forwardで行う手法RoadVGGTを提案。幾何学的foundation modelでマルチビュー画像・pose・depthからGaussian属性を予測し、metric座標系に整合させたうえでroad平面上でconfidence-weightedなgrid fusionにより冗長Gaussianを統合する。歩道との境界などの脆弱な道路構造はcategory-aware groupingとjunction保護で扱う。
+
+**新規性**
+
+従来の道路特化最適化手法がシーンごとの学習と軌道依存のカバレッジ設計を必要とするのに対し、test-time最適化なしのfeed-forward推論でコンパクトなGaussian道路表現を生成する点が異なる。
+
+**読む理由**
+
+HD Map生成やGaussian Splattingを用いた大規模屋外シーン再構成のスケーラビリティ向上という観点で、地図生成研究の動向を追ううえで参考になる。
+
+- Paper: https://arxiv.org/abs/2607.23758
+- Code: -
+
+### LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving
+
+arXiv 2026 / Reconstruction
+
+**概要**
+
+自動運転で高精度なメートル単位の深度を得るための多視点ステレオ手法DriveMVSを提案。疎なLiDAR点をコスト volumeへのハードな幾何プライアと、特徴融合によるソフトなガイダンスの両方として活用し、空間・時間方向の一貫性を持つ深度推定を実現する。空間・時間デコーダにより隣接フレーム間の整合性も確保している。
+
+**新規性**
+
+LiDARを単純な補助入力としてではなく、コスト volume上の絶対スケール固定と特徴レベルの融合という二重の形で組み込む点、および複数手がかりを統合するtriple-cue combinerと時空間デコーダを組み合わせている点が従来のMVS手法と異なる。
+
+**読む理由**
+
+占有予測やシーン再構成の入力として使われるメトリック深度の精度・時間的一貫性・領域汎化を同時に扱っており、認識・地図生成パイプラインの前段技術として動向を追う価値がある。
+
+- Paper: https://arxiv.org/abs/2603.03765
+- Code: -
+
+### DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving
+
+CVPR 2026 / Reconstruction
+
+**概要**
+
+自動運転における動的シーン再構成では移動物体や時間変化の扱いが課題となる。本研究はVGGTを静的3D復元から動的4D復元へ拡張したDynamicVGGTを提案し、現在と将来の点群マップを共通の参照座標系で同時予測することで時間的対応を通じた動的点表現の学習を行う。Motion-aware Temporal Attentionで時間依存性を捉え、Dynamic 3D Gaussian Splatting Headでシーンフロー教師あり学習によりGaussian速度を予測し幾何を精緻化する。
+
+**新規性**
+
+静的復元に強い既存のfeed-forward 3Dモデル(VGGT)を、明示的なGaussian速度予測と時間的注意機構により動的4D復元へ拡張した点が新規性。
+
+**読む理由**
+
+feed-forwardな4D動的シーン復元は地図生成・環境認識における動的物体表現の基盤技術であり、Gaussian Splattingベースの手法動向を追ううえで参考になる。
+
+- Paper: https://arxiv.org/abs/2603.08254
+- Code: -
+
+### Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos
+
+CVPR 2026 / Reconstruction
+
+**概要**
+
+Ov3Rは、RGB動画ストリームからオープン語彙の意味的3D再構成を行うフレームワークである。重なり合うクリップから密な点群マップと物体レベルの意味情報を同時に予測するCLIP3Rと、2D特徴を空間・幾何・意味情報を統合した記述子として3Dへ持ち上げる2D-3D OVSモジュールから構成される。
+
+**新規性**
+
+従来手法とは異なり、CLIPによる意味情報を再構成プロセス自体に組み込むことで、大域的に一貫した幾何形状と細粒度の意味的整合を同時に達成している点が新しい。
+
+**読む理由**
+
+RGB動画のみからの密な3D再構成とオープン語彙セグメンテーションを統合するアプローチは、地図生成やシーン理解におけるオープンボキャブラリ対応の潮流を把握するうえで参考になる。
+
+- Paper: https://arxiv.org/abs/2507.22052
+- Code: -
+
 ## Scene Understanding
 
 ### Distill, Diffuse, Segment: Unsupervised 3D Semantic Segmentation for Autonomous Driving Based on Multi-Level Distillation and Graph Diffusion
@@ -3395,84 +3518,6 @@ LiDARシーン補完はOccupancy予測やマップ生成の前段処理として
 
 - Paper: https://arxiv.org/abs/2412.03515
 - Code: https://github.com/happyw1nd/ScoreLiDAR
-
-## Reconstruction
-
-### RoadVGGT: Road-Structure-Aware Feed-Forward Road Surface Reconstruction
-
-arXiv 2026 / Reconstruction
-
-**概要**
-
-大規模道路サーフェス再構成を、シーンごとの最適化なしにfeed-forwardで行う手法RoadVGGTを提案。幾何学的foundation modelでマルチビュー画像・pose・depthからGaussian属性を予測し、metric座標系に整合させたうえでroad平面上でconfidence-weightedなgrid fusionにより冗長Gaussianを統合する。歩道との境界などの脆弱な道路構造はcategory-aware groupingとjunction保護で扱う。
-
-**新規性**
-
-従来の道路特化最適化手法がシーンごとの学習と軌道依存のカバレッジ設計を必要とするのに対し、test-time最適化なしのfeed-forward推論でコンパクトなGaussian道路表現を生成する点が異なる。
-
-**読む理由**
-
-HD Map生成やGaussian Splattingを用いた大規模屋外シーン再構成のスケーラビリティ向上という観点で、地図生成研究の動向を追ううえで参考になる。
-
-- Paper: https://arxiv.org/abs/2607.23758
-- Code: -
-
-### LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving
-
-arXiv 2026 / Reconstruction
-
-**概要**
-
-自動運転で高精度なメートル単位の深度を得るための多視点ステレオ手法DriveMVSを提案。疎なLiDAR点をコスト volumeへのハードな幾何プライアと、特徴融合によるソフトなガイダンスの両方として活用し、空間・時間方向の一貫性を持つ深度推定を実現する。空間・時間デコーダにより隣接フレーム間の整合性も確保している。
-
-**新規性**
-
-LiDARを単純な補助入力としてではなく、コスト volume上の絶対スケール固定と特徴レベルの融合という二重の形で組み込む点、および複数手がかりを統合するtriple-cue combinerと時空間デコーダを組み合わせている点が従来のMVS手法と異なる。
-
-**読む理由**
-
-占有予測やシーン再構成の入力として使われるメトリック深度の精度・時間的一貫性・領域汎化を同時に扱っており、認識・地図生成パイプラインの前段技術として動向を追う価値がある。
-
-- Paper: https://arxiv.org/abs/2603.03765
-- Code: -
-
-### DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving
-
-CVPR 2026 / Reconstruction
-
-**概要**
-
-自動運転における動的シーン再構成では移動物体や時間変化の扱いが課題となる。本研究はVGGTを静的3D復元から動的4D復元へ拡張したDynamicVGGTを提案し、現在と将来の点群マップを共通の参照座標系で同時予測することで時間的対応を通じた動的点表現の学習を行う。Motion-aware Temporal Attentionで時間依存性を捉え、Dynamic 3D Gaussian Splatting Headでシーンフロー教師あり学習によりGaussian速度を予測し幾何を精緻化する。
-
-**新規性**
-
-静的復元に強い既存のfeed-forward 3Dモデル(VGGT)を、明示的なGaussian速度予測と時間的注意機構により動的4D復元へ拡張した点が新規性。
-
-**読む理由**
-
-feed-forwardな4D動的シーン復元は地図生成・環境認識における動的物体表現の基盤技術であり、Gaussian Splattingベースの手法動向を追ううえで参考になる。
-
-- Paper: https://arxiv.org/abs/2603.08254
-- Code: -
-
-### Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos
-
-CVPR 2026 / Reconstruction
-
-**概要**
-
-Ov3Rは、RGB動画ストリームからオープン語彙の意味的3D再構成を行うフレームワークである。重なり合うクリップから密な点群マップと物体レベルの意味情報を同時に予測するCLIP3Rと、2D特徴を空間・幾何・意味情報を統合した記述子として3Dへ持ち上げる2D-3D OVSモジュールから構成される。
-
-**新規性**
-
-従来手法とは異なり、CLIPによる意味情報を再構成プロセス自体に組み込むことで、大域的に一貫した幾何形状と細粒度の意味的整合を同時に達成している点が新しい。
-
-**読む理由**
-
-RGB動画のみからの密な3D再構成とオープン語彙セグメンテーションを統合するアプローチは、地図生成やシーン理解におけるオープンボキャブラリ対応の潮流を把握するうえで参考になる。
-
-- Paper: https://arxiv.org/abs/2507.22052
-- Code: -
 
 ## Occupancy Forecasting
 
