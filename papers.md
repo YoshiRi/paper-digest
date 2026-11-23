@@ -1,12 +1,12 @@
 # 論文ダイジェスト
 
-生成日時: 2026-11-09 05:21 / 収録 204 件
+生成日時: 2026-11-23 06:32 / 収録 208 件
 
 ## トピック
 
-- [Occupancy](#occupancy) — 58 件
+- [Occupancy](#occupancy) — 60 件
 - [HD Map](#hd-map) — 41 件
-- [3D Detection](#3d-detection) — 29 件
+- [3D Detection](#3d-detection) — 31 件
 - [AD Perception](#ad-perception) — 25 件
 - [Gaussian Splatting](#gaussian-splatting) — 20 件
 - [World Model](#world-model) — 11 件
@@ -18,6 +18,24 @@
 - [Map Update](#map-update) — 1 件
 
 ## Occupancy
+
+### GaussianMamba: Geometric and Relational State Space Scanning of 3D Gaussian Primitives
+
+arXiv 2026 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2611.22742
+- Code: -
+
+### CGOcc: Learning Cross-Gaussian Dependencies for 3D Semantic Occupancy Prediction
+
+arXiv 2026 / Occupancy
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2611.15692
+- Code: -
 
 ### Fast-Slow Evolutionary Occupancy Prediction via Controlled Dynamics
 
@@ -1292,7 +1310,7 @@ arXiv 2026 / HD Map
 
 ### The Road Ahead in Autonomous Driving: The KITScenes Multimodal Dataset
 
-arXiv 2026 / HD Map
+NEURIPS 2026 / HD Map
 
 **概要**
 
@@ -1824,6 +1842,15 @@ CVPR 2025 / HD Map
 
 ## 3D Detection
 
+### Mechanism Parity for Simulation-Based Validation of Autonomous-Driving Perception
+
+arXiv 2026 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2611.27447
+- Code: -
+
 ### Accuracy- and Real-Time-Aware 4D Radar Preprocessing for Autonomous Driving Perception Systems
 
 arXiv 2026 / 3D Detection
@@ -1898,6 +1925,15 @@ arXiv 2026 / 3D Detection
 実運用ではカメラの取り付け誤差やキャリブレーションずれが常に存在するため、BEV検出のロバスト性を上げる手法は地図生成・環境認識パイプライン全体の信頼性向上に直結する。
 
 - Paper: https://arxiv.org/abs/2608.03895
+- Code: -
+
+### FogDrive: A Multi-Modal Synthetic Driving Dataset for Perception under Graded Fog
+
+arXiv 2026 / 3D Detection
+
+*(日本語要約は未生成。`paper-digest summarize` を実行してください)*
+
+- Paper: https://arxiv.org/abs/2607.22698
 - Code: -
 
 ### DeGuNet: Depth-Guided Ultra-Compact Backbones for Efficient LiDAR-Camera 3D Detection

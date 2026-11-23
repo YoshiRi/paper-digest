@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-09T05:21:43+00:00",
+  "updated_at": "2026-11-23T06:32:56+00:00",
   "config": {
     "query": [],
     "since": 2025,
@@ -911,7 +911,7 @@
       "abstract": "Existing autonomous driving datasets have enabled major progress, but fall short in sensor fidelity, map completeness, or geographic diversity. We present KITScenes Multimodal, a European dataset built around high-fidelity sensors and maps. Our fully synchronized sensor suite combines high-resolution global-shutter cameras, long-range lidar beyond 400m, 4D imaging radar, and redundant GNSS/INS localization. Our HD maps are, to our knowledge, the most complete of any sensor dataset, validated through autonomous driving trials on open-source software. For the first time in a public dataset, all driving-relevant traffic elements, such as traffic lights, are mapped in 3D to a reprojection-accurate level with full topological connectivity. Recorded in cities with irregular street layouts and mixed traffic modes, our dataset complements existing datasets by broadening the available geographic diversity. We also introduce four benchmarks, each advancing spatial learning for embodied AI: online HD map construction, long-range depth estimation, novel view synthesis, and end-to-end driving. Project page: https://kitscenes.com/",
       "paper_url": "https://arxiv.org/abs/2606.02956",
       "code_url": "",
-      "venue": "arXiv 2026",
+      "venue": "NEURIPS 2026",
       "year": 2026,
       "topic": "HD Map",
       "topics": [
@@ -7093,7 +7093,9 @@
       "year": 2026,
       "topic": "Gaussian Splatting",
       "topics": [
-        "Gaussian Splatting"
+        "Gaussian Splatting",
+        "3D Detection",
+        "Occupancy"
       ],
       "authors": [
         "Afif Boudaoud",
@@ -7106,7 +7108,7 @@
       "summary_ja": "",
       "novelty_ja": "",
       "why_read_ja": "",
-      "relevance": 6.0,
+      "relevance": 8.0,
       "llm_relevant": null,
       "llm_reason": "",
       "added_at": "2026-10-05T04:46:27+00:00"
@@ -7581,6 +7583,128 @@
       "llm_relevant": null,
       "llm_reason": "",
       "added_at": "2026-11-09T05:21:43+00:00"
+    },
+    {
+      "title": "Mechanism Parity for Simulation-Based Validation of Autonomous-Driving Perception",
+      "abstract": "Simulation is central to intelligent-vehicle validation, but visual realism or output agreement between a real scene and its synthetic counterpart does not prove that a perception system used the same evidence in both domains. This paper addresses that mechanism-parity gap for paired real-synthetic autonomous-driving perception. It unifies Decisive-Feature Fidelity, which compares decisive evidence maps in a frozen system under test (SUT), with Concept-Decisive Feature Fidelity, which projects decisive evidence into semantic scene concepts for diagnosis. The framework is a validation diagnostic rather than a standalone safety certificate: it asks whether output-consistent simulation also preserves the mechanism by which the perception model reaches that output. The empirical evidence comprises ten retrained diffusion ControlNet generators evaluated on a deterministic exact-geometry KITTI-Virtual KITTI 2 subset. Generated counterparts use a 1248-by-376-pixel padded inference canvas and are cropped back to the exact KITTI dimensions before evaluation. The final benchmark reports target-image, output-consistency, and mechanism metrics recomputed from a single audited output set, then adds metric-disagreement cases, bootstrap uncertainty, threshold sensitivity, and concept/cache integrity audits. Across the benchmark, output and appearance fidelity are at most weakly and inconsistently rank-correlated with decisive-mechanism distance for all three frozen SUTs, and a constructed positive control shows the estimator detects a known planted mechanism that output agreement misses, supporting decisive-evidence diagnostics for intelligent-vehicle simulation validation. All numerical claims are restricted to the declared exact-geometry benchmark, ten generators, and three frozen SUTs.",
+      "paper_url": "https://arxiv.org/abs/2611.27447",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "3D Detection",
+      "topics": [
+        "3D Detection",
+        "World Model"
+      ],
+      "authors": [
+        "Danial Safaei",
+        "Siddartha Khastgir",
+        "Matthew D. Higgins",
+        "Jeroen Ploeg",
+        "Mohsen Alirezaei",
+        "Son Tong",
+        "Paul A. Jennings",
+        "Xingyu Zhao"
+      ],
+      "source": "arxiv",
+      "published": "2026-11-20T10:43:41Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 6.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-23T06:32:56+00:00"
+    },
+    {
+      "title": "GaussianMamba: Geometric and Relational State Space Scanning of 3D Gaussian Primitives",
+      "abstract": "3D semantic occupancy prediction requires representing complex spatial structures and modeling contextual relationships across a scene. 3D Gaussian primitives provide a sparse and adaptive representation of scene geometry and semantics, while Mamba offers efficient sequence modeling for capturing dependencies among primitives. However, Gaussian primitives are irregular and unordered, making sequence construction challenging, as conventional spatial ordering may overlook their anisotropic geometry and feature-semantic relationships. In this paper, we present GaussianMamba, a dual-branch Mamba framework that explicitly incorporates Gaussian-specific geometric and feature-semantic relationships into complementary scanning strategies. The first branch refines a locality-preserving traversal using anisotropic Gaussian support derived from primitive scale and orientation. The second branch reorders spatially organized groups according to feature-semantic affinity and adjusts local features using geometry-weighted semantic differences. The resulting sequences are processed by separate Mamba modules, and their features are fused through a support-aware mechanism that incorporates local feature discrepancies arising from the distinct scanning paths. Experiments on nuScenes-SurroundOcc and SSCBench-KITTI-360 demonstrate consistent improvements over GaussianFormer and GaussianFormer-2 in both IoU and mIoU.",
+      "paper_url": "https://arxiv.org/abs/2611.22742",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Occupancy",
+      "topics": [
+        "Occupancy",
+        "Scene Understanding",
+        "3D Detection",
+        "AD Perception"
+      ],
+      "authors": [
+        "A. Enes Doruk",
+        "Ozgur Erkent"
+      ],
+      "source": "arxiv",
+      "published": "2026-11-17T13:11:52Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 20.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-23T06:32:56+00:00"
+    },
+    {
+      "title": "CGOcc: Learning Cross-Gaussian Dependencies for 3D Semantic Occupancy Prediction",
+      "abstract": "In Gaussian-based semantic occupancy prediction, overlapping primitives can provide ambiguous class predictions, making their joint interpretation important for voxel classification. However, current methods using spatially weighted mixtures neglect explicit modeling of cross-primitive dependencies, limiting the readout's ability to utilize category-specific relational evidence. Hence, we introduce CGOcc, a supervised multi-camera framework that explicitly models Cross-Gaussian dependencies for 3D semantic Occupancy prediction. CGOcc integrates appearance and geometric observations to refine Gaussian states and encodes cross-Gaussian dependencies in a diagonal-plus-low-rank representation. To incorporate these dependencies into voxel classification, CGOcc uses a class-conditional projection to extract diagonal and signed cross-Gaussian statistics without constructing a dense dependency matrix. The readout then refines occupied-class probabilities using these statistics while preserving a learned reference's occupied mass and free probability. Extensive experiments on nuScenes demonstrate CGOcc achieves state-of-the-art performance, with larger gains at high Gaussian overlap and improved predictions near boundaries. Ablation studies validate the effectiveness of covariance-aware prediction and support its synergy with geometric interaction.",
+      "paper_url": "https://arxiv.org/abs/2611.15692",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "Occupancy",
+      "topics": [
+        "Occupancy",
+        "Scene Understanding",
+        "3D Detection",
+        "AD Perception"
+      ],
+      "authors": [
+        "Zirui Huang",
+        "Jiongle He",
+        "Yunfan Zeng",
+        "Yuanzhi Lu",
+        "Guangye Li",
+        "Boyan Tang",
+        "Weite SU",
+        "Pedro V. Sander",
+        "Amy Hui Zhang"
+      ],
+      "source": "arxiv",
+      "published": "2026-11-11T16:31:31Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 21.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-23T06:32:56+00:00"
+    },
+    {
+      "title": "FogDrive: A Multi-Modal Synthetic Driving Dataset for Perception under Graded Fog",
+      "abstract": "Fog degrades autonomous-driving perception across modalities: it lowers image contrast, attenuates and scatters LiDAR returns, and shifts the input distribution of every learned module downstream. Choosing between restoring the degraded input and training on it directly requires the same scenes observed with and without fog at known severities, and enough foggy data to train on. Real-world capture cannot supply this: fog arrives entangled with lighting and traffic, at severities recorded rather than chosen; existing synthetic datasets narrow the sensor suite, the scale, or the severity range. We present FogDrive, a CARLA dataset of ~660 scenes (~133k frames), each released as a clear reference plus three calibrated fog densities, with physics-based fog on camera and LiDAR and 2D/3D annotations consistent across all variants. Every frame carries four cameras (RGB, depth, semantic), LiDAR, semantic LiDAR and radar -- spanning fog's response spectrum from heavily degraded cameras to largely unaffected radar. Experiments trained on FogDrive show that mixing fog densities improves 3D detection at no extra data cost, that PSNR and SSIM poorly predict a dehazer's detection benefit, and that radar improves camera-LiDAR fusion at every density. The dataset and its generation framework will be released.",
+      "paper_url": "https://arxiv.org/abs/2607.22698",
+      "code_url": "",
+      "venue": "arXiv 2026",
+      "year": 2026,
+      "topic": "3D Detection",
+      "topics": [
+        "3D Detection",
+        "AD Perception"
+      ],
+      "authors": [
+        "Vansh Panwar",
+        "Naveen Varshney",
+        "Prashant W. Patil"
+      ],
+      "source": "arxiv",
+      "published": "2026-07-18T06:53:56Z",
+      "summary_ja": "",
+      "novelty_ja": "",
+      "why_read_ja": "",
+      "relevance": 10.5,
+      "llm_relevant": null,
+      "llm_reason": "",
+      "added_at": "2026-11-23T06:32:56+00:00"
     }
   ]
 }
